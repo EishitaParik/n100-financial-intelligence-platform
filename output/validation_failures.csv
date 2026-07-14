@@ -1,0 +1,16 @@
+table,rule,severity,message
+balancesheet.xlsx,DQ-02,WARNING,133 duplicate company-year combinations
+balancesheet.xlsx,DQ-03,CRITICAL,98 invalid company IDs
+cashflow.xlsx,DQ-02,WARNING,23 duplicate company-year combinations
+cashflow.xlsx,DQ-03,CRITICAL,120 invalid company IDs
+profitandloss.xlsx,DQ-02,WARNING,12 duplicate company-year combinations
+profitandloss.xlsx,DQ-03,CRITICAL,112 invalid company IDs
+profitandloss.xlsx,DQ-05,WARNING,1 non-positive sales
+analysis.xlsx,DQ-03,CRITICAL,4 invalid company IDs
+documents.xlsx,DQ-03,CRITICAL,144 invalid company IDs
+prosandcons.xlsx,DQ-03,CRITICAL,2 invalid company IDs
+financial_ratios.xlsx,DQ-03,CRITICAL,48 invalid company IDs
+market_cap.xlsx,DQ-03,CRITICAL,6 invalid company IDs
+peer_groups.xlsx,DQ-03,CRITICAL,1 invalid company IDs
+sectors.xlsx,DQ-03,CRITICAL,1 invalid company IDs
+stock_prices.xlsx,DQ-03,CRITICAL,60 invalid company IDs
