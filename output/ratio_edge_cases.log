@@ -1,0 +1,34 @@
+========== Ratio Edge Cases ==========
+
+Financial Sector Companies
+AXISBANK : High leverage expected - D/E warning suppressed
+BAJAJFINSV : High leverage expected - D/E warning suppressed
+BAJAJHLDNG : High leverage expected - D/E warning suppressed
+BAJFINANCE : High leverage expected - D/E warning suppressed
+BANKBARODA : High leverage expected - D/E warning suppressed
+CANBK : High leverage expected - D/E warning suppressed
+CHOLAFIN : High leverage expected - D/E warning suppressed
+HDFCBANK : High leverage expected - D/E warning suppressed
+HDFCLIFE : High leverage expected - D/E warning suppressed
+ICICIBANK : High leverage expected - D/E warning suppressed
+ICICIGI : High leverage expected - D/E warning suppressed
+ICICIPRULI : High leverage expected - D/E warning suppressed
+INDUSINDBK : High leverage expected - D/E warning suppressed
+IRFC : High leverage expected - D/E warning suppressed
+JIOFIN : High leverage expected - D/E warning suppressed
+KOTAKBANK : High leverage expected - D/E warning suppressed
+LICI : High leverage expected - D/E warning suppressed
+PFC : High leverage expected - D/E warning suppressed
+PNB : High leverage expected - D/E warning suppressed
+RECLTD : High leverage expected - D/E warning suppressed
+SBILIFE : High leverage expected - D/E warning suppressed
+SBIN : High leverage expected - D/E warning suppressed
+SHRIRAMFIN : High leverage expected - D/E warning suppressed
+
+ROE Source Comparison
+Tata Consultancy Services Ltd: Source ROE = 0.52 (Possible source anomaly)
+
+Review Category:
+- Data Source Issue
+- Formula Difference
+- Version Difference
