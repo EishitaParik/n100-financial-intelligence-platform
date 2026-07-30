@@ -1,0 +1,30 @@
+quality_compounder:
+  return_on_equity_pct_min: 15
+  debt_to_equity_max: 1.0
+  free_cash_flow_cr_min: 0
+  compounded_sales_growth_min: 10
+
+value_pick:
+  pe_ratio_max: 20
+  pb_ratio_max: 3
+  debt_to_equity_max: 2
+  dividend_yield_pct_min: 1
+
+growth_accelerator:
+  compounded_profit_growth_min: 20
+  compounded_sales_growth_min: 15
+  debt_to_equity_max: 2
+
+dividend_champion:
+  dividend_yield_pct_min: 4
+  dividend_payout_ratio_pct_max: 50
+  free_cash_flow_cr_min: 500
+
+debt_free_bluechip:
+  debt_to_equity_max: 0
+  return_on_equity_pct_min: 15
+  sales_min: 5000
+
+turnaround_watch:
+  compounded_sales_growth_min: 10
+  free_cash_flow_cr_min: 0
