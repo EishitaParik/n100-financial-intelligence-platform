@@ -1,42 +1,86 @@
 # N100 Financial Intelligence Platform
 
-## Sprint 1 - Data Foundation
+## Overview
 
-This project implements the ETL pipeline for the N100 Financial Intelligence Platform.
+The N100 Financial Intelligence Platform is an interactive financial analytics dashboard built using Python, Streamlit, SQLite, and Plotly.
 
-### Features
+The platform analyzes companies in the Nifty 100 universe using financial statements, valuation metrics, peer comparison, sector analysis, and stock screening.
 
-- Excel data ingestion
-- Data normalization
-- SQLite database creation
-- 16 Data Quality validation rules
-- Automated ETL pipeline
-- Unit testing
-- Load audit generation
-- Validation report generation
+---
 
-### Tech Stack
+## Features
+
+- Interactive Dashboard
+- Company Profile
+- Financial Screener
+- Peer Comparison
+- Trend Analysis
+- Sector Analysis
+- Capital Structure Analysis
+- Annual Reports
+- Valuation Analytics
+
+---
+
+## Technology Stack
 
 - Python
-- Pandas
+- Streamlit
 - SQLite
-- Pytest
+- Pandas
+- Plotly
+- NumPy
 
-### Project Structure
+---
 
-- src/etl
-- db
-- tests
-- notebooks
-- output
+## Project Structure
 
-### Sprint 1 Deliverables
+```
+src/
+│
+├── analytics/
+├── dashboard/
+├── etl/
+├── screener/
+└── tests/
+```
 
-- Excel Loader
-- SQLite Database
-- Data Validator
-- 35 Unit Tests
-- Load Audit
-- Validation Report
-- Manual Review
-- Exploratory SQL
+---
+
+## Dashboard Pages
+
+1. Home
+2. Company Profile
+3. Screener
+4. Peer Comparison
+5. Trends
+6. Sectors
+7. Capital
+8. Reports
+
+---
+
+## Outputs
+
+The project generates:
+
+- screener_output.csv
+- peer_comparison.xlsx
+- valuation_summary.xlsx
+- valuation_flags.csv
+
+---
+
+## Run
+
+```bash
+streamlit run src/dashboard/app.py
+```
+
+---
+
+## Author
+
+Eishita Parik
+
+Bluestock Fintech Internship
