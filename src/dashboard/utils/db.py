@@ -103,7 +103,7 @@ def get_dashboard_data(year):
 
    LEFT JOIN analysis a
         ON c.id = a.company_id
-        AND fr.year = a.year
+        
 
     WHERE fr.year=?
 
