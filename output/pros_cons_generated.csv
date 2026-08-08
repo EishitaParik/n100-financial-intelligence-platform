@@ -1,0 +1,1092 @@
+company_id,type,rule_id,text,confidence_pct
+ABB,con,CON2,Negative free cash flow raises concern about cash generation.,80
+ABB,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+ABB,pro,PRO10,Return on equity indicates strengthening business quality.,78
+ABB,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+ABB,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ABB,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+ABB,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+ABB,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+ABB,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+ABB,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+ADANIENSOL,con,CON1,Debt-to-equity ratio of 8.96 is elevated.,90
+ADANIENSOL,con,CON10,Low return on capital efficiency.,82
+ADANIENSOL,con,CON11,High debt limits financial flexibility.,78
+ADANIENSOL,con,CON2,Negative free cash flow raises concern about cash generation.,80
+ADANIENSOL,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+ADANIENSOL,con,CON5,Low return on equity indicates poor capital efficiency.,80
+ADANIENSOL,con,CON6,Low interest coverage increases financial risk.,90
+ADANIENSOL,con,CON8,Debt levels are relatively high.,82
+ADANIENSOL,con,CON9,Low earnings per share indicates weak profitability.,75
+ADANIENSOL,pro,PRO10,Return on equity indicates strengthening business quality.,78
+ADANIENSOL,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+ADANIENSOL,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ADANIENSOL,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+ADANIENSOL,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+ADANIENSOL,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+ADANIENSOL,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+ADANIENT,con,CON1,Debt-to-equity ratio of 3.24 is elevated.,90
+ADANIENT,con,CON10,Low return on capital efficiency.,82
+ADANIENT,con,CON11,High debt limits financial flexibility.,78
+ADANIENT,con,CON2,Negative free cash flow raises concern about cash generation.,80
+ADANIENT,con,CON4,Operating margin is relatively weak.,75
+ADANIENT,con,CON5,Low return on equity indicates poor capital efficiency.,80
+ADANIENT,con,CON8,Debt levels are relatively high.,82
+ADANIENT,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ADANIENT,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+ADANIGREEN,con,CON1,Debt-to-equity ratio of 3.61 is elevated.,90
+ADANIGREEN,con,CON10,Low return on capital efficiency.,82
+ADANIGREEN,con,CON11,High debt limits financial flexibility.,78
+ADANIGREEN,con,CON2,Negative free cash flow raises concern about cash generation.,80
+ADANIGREEN,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+ADANIGREEN,con,CON5,Low return on equity indicates poor capital efficiency.,80
+ADANIGREEN,con,CON6,Low interest coverage increases financial risk.,90
+ADANIGREEN,con,CON8,Debt levels are relatively high.,82
+ADANIGREEN,con,CON9,Low earnings per share indicates weak profitability.,75
+ADANIGREEN,pro,PRO10,Return on equity indicates strengthening business quality.,78
+ADANIGREEN,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ADANIGREEN,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+ADANIGREEN,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+ADANIPORTS,con,CON11,High debt limits financial flexibility.,78
+ADANIPORTS,con,CON2,Negative free cash flow raises concern about cash generation.,80
+ADANIPORTS,con,CON8,Debt levels are relatively high.,82
+ADANIPORTS,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+ADANIPORTS,pro,PRO10,Return on equity indicates strengthening business quality.,78
+ADANIPORTS,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ADANIPORTS,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+ADANIPORTS,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+ADANIPOWER,con,CON1,Debt-to-equity ratio of 9.74 is elevated.,90
+ADANIPOWER,con,CON10,Low return on capital efficiency.,82
+ADANIPOWER,con,CON11,High debt limits financial flexibility.,78
+ADANIPOWER,con,CON2,Negative free cash flow raises concern about cash generation.,80
+ADANIPOWER,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+ADANIPOWER,con,CON5,Low return on equity indicates poor capital efficiency.,80
+ADANIPOWER,con,CON6,Low interest coverage increases financial risk.,90
+ADANIPOWER,con,CON8,Debt levels are relatively high.,82
+ADANIPOWER,con,CON9,Low earnings per share indicates weak profitability.,75
+ADANIPOWER,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+ADANIPOWER,pro,PRO10,Return on equity indicates strengthening business quality.,78
+ADANIPOWER,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ADANIPOWER,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+ADANIPOWER,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+ADANIPOWER,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+AMBUJACEM,con,CON10,Low return on capital efficiency.,82
+AMBUJACEM,con,CON2,Negative free cash flow raises concern about cash generation.,80
+AMBUJACEM,con,CON5,Low return on equity indicates poor capital efficiency.,80
+AMBUJACEM,con,CON7,Dividend payout above 100% appears unsustainable.,88
+AMBUJACEM,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+AMBUJACEM,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+AMBUJACEM,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+AMBUJACEM,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+AMBUJACEM,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+APOLLOHOSP,con,CON10,Low return on capital efficiency.,82
+APOLLOHOSP,con,CON11,High debt limits financial flexibility.,78
+APOLLOHOSP,con,CON2,Negative free cash flow raises concern about cash generation.,80
+APOLLOHOSP,con,CON5,Low return on equity indicates poor capital efficiency.,80
+APOLLOHOSP,pro,PRO10,Return on equity indicates strengthening business quality.,78
+APOLLOHOSP,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+APOLLOHOSP,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+APOLLOHOSP,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+APOLLOHOSP,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+ASIANPAINT,con,CON11,High debt limits financial flexibility.,78
+ASIANPAINT,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+ASIANPAINT,pro,PRO10,Return on equity indicates strengthening business quality.,78
+ASIANPAINT,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+ASIANPAINT,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ASIANPAINT,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+ASIANPAINT,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+ASIANPAINT,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+ASIANPAINT,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+AXISBANK,con,CON1,Debt-to-equity ratio of 8.93 is elevated.,90
+AXISBANK,con,CON10,Low return on capital efficiency.,82
+AXISBANK,con,CON11,High debt limits financial flexibility.,78
+AXISBANK,con,CON2,Negative free cash flow raises concern about cash generation.,80
+AXISBANK,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+AXISBANK,con,CON4,Operating margin is relatively weak.,75
+AXISBANK,con,CON5,Low return on equity indicates poor capital efficiency.,80
+AXISBANK,con,CON6,Low interest coverage increases financial risk.,90
+AXISBANK,con,CON8,Debt levels are relatively high.,82
+AXISBANK,con,CON9,Low earnings per share indicates weak profitability.,75
+AXISBANK,pro,PRO10,Return on equity indicates strengthening business quality.,78
+AXISBANK,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+AXISBANK,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+AXISBANK,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+AXISBANK,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+BAJAJAUTO,con,CON11,High debt limits financial flexibility.,78
+BAJAJAUTO,con,CON2,Negative free cash flow raises concern about cash generation.,80
+BAJAJAUTO,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+BAJAJAUTO,pro,PRO10,Return on equity indicates strengthening business quality.,78
+BAJAJAUTO,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+BAJAJAUTO,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+BAJAJAUTO,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+BAJAJAUTO,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+BAJAJAUTO,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+BAJAJAUTO,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+BAJAJFINSV,con,CON1,Debt-to-equity ratio of 2.09 is elevated.,90
+BAJAJFINSV,con,CON11,High debt limits financial flexibility.,78
+BAJAJFINSV,con,CON2,Negative free cash flow raises concern about cash generation.,80
+BAJAJFINSV,con,CON8,Debt levels are relatively high.,82
+BAJAJFINSV,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+BAJAJFINSV,pro,PRO10,Return on equity indicates strengthening business quality.,78
+BAJAJFINSV,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+BAJAJFINSV,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+BAJAJFINSV,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+BAJAJFINSV,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+BAJAJHLDNG,con,CON10,Low return on capital efficiency.,82
+BAJAJHLDNG,con,CON2,Negative free cash flow raises concern about cash generation.,80
+BAJAJHLDNG,con,CON5,Low return on equity indicates poor capital efficiency.,80
+BAJAJHLDNG,pro,PRO10,Return on equity indicates strengthening business quality.,78
+BAJAJHLDNG,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+BAJAJHLDNG,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+BAJAJHLDNG,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+BAJAJHLDNG,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+BAJAJHLDNG,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+BAJAJHLDNG,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+BAJAJHLDNG,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+BAJAJHLDNG,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+BAJFINANCE,con,CON1,Debt-to-equity ratio of 5.55 is elevated.,90
+BAJFINANCE,con,CON11,High debt limits financial flexibility.,78
+BAJFINANCE,con,CON2,Negative free cash flow raises concern about cash generation.,80
+BAJFINANCE,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+BAJFINANCE,con,CON6,Low interest coverage increases financial risk.,90
+BAJFINANCE,con,CON8,Debt levels are relatively high.,82
+BAJFINANCE,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+BAJFINANCE,pro,PRO10,Return on equity indicates strengthening business quality.,78
+BAJFINANCE,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+BAJFINANCE,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+BAJFINANCE,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+BAJFINANCE,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+BANKBARODA,con,CON1,Debt-to-equity ratio of 15.30 is elevated.,90
+BANKBARODA,con,CON10,Low return on capital efficiency.,82
+BANKBARODA,con,CON11,High debt limits financial flexibility.,78
+BANKBARODA,con,CON2,Negative free cash flow raises concern about cash generation.,80
+BANKBARODA,con,CON4,Operating margin is relatively weak.,75
+BANKBARODA,con,CON5,Low return on equity indicates poor capital efficiency.,80
+BANKBARODA,con,CON8,Debt levels are relatively high.,82
+BANKBARODA,con,CON9,Low earnings per share indicates weak profitability.,75
+BANKBARODA,pro,PRO10,Return on equity indicates strengthening business quality.,78
+BANKBARODA,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+BANKBARODA,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+BANKBARODA,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+BEL,con,CON1,Debt-to-equity ratio of 4.00 is elevated.,90
+BEL,con,CON2,Negative free cash flow raises concern about cash generation.,80
+BEL,con,CON8,Debt levels are relatively high.,82
+BEL,con,CON9,Low earnings per share indicates weak profitability.,75
+BEL,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+BEL,pro,PRO10,Return on equity indicates strengthening business quality.,78
+BEL,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+BEL,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+BEL,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+BEL,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+BHARTIARTL,con,CON1,Debt-to-equity ratio of 2.10 is elevated.,90
+BHARTIARTL,con,CON10,Low return on capital efficiency.,82
+BHARTIARTL,con,CON11,High debt limits financial flexibility.,78
+BHARTIARTL,con,CON2,Negative free cash flow raises concern about cash generation.,80
+BHARTIARTL,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+BHARTIARTL,con,CON5,Low return on equity indicates poor capital efficiency.,80
+BHARTIARTL,con,CON6,Low interest coverage increases financial risk.,90
+BHARTIARTL,con,CON7,Dividend payout above 100% appears unsustainable.,88
+BHARTIARTL,con,CON8,Debt levels are relatively high.,82
+BHARTIARTL,con,CON9,Low earnings per share indicates weak profitability.,75
+BHARTIARTL,pro,PRO10,Return on equity indicates strengthening business quality.,78
+BHARTIARTL,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+BHARTIARTL,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+BHARTIARTL,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+BHEL,con,CON10,Low return on capital efficiency.,82
+BHEL,con,CON11,High debt limits financial flexibility.,78
+BHEL,con,CON2,Negative free cash flow raises concern about cash generation.,80
+BHEL,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+BHEL,con,CON4,Operating margin is relatively weak.,75
+BHEL,con,CON5,Low return on equity indicates poor capital efficiency.,80
+BHEL,con,CON6,Low interest coverage increases financial risk.,90
+BHEL,con,CON7,Dividend payout above 100% appears unsustainable.,88
+BHEL,con,CON9,Low earnings per share indicates weak profitability.,75
+BHEL,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+BHEL,pro,PRO10,Return on equity indicates strengthening business quality.,78
+BHEL,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+BHEL,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+BHEL,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+BHEL,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+BHEL,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+BOSCHLTD,con,CON10,Low return on capital efficiency.,82
+BOSCHLTD,con,CON5,Low return on equity indicates poor capital efficiency.,80
+BOSCHLTD,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+BOSCHLTD,pro,PRO10,Return on equity indicates strengthening business quality.,78
+BOSCHLTD,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+BOSCHLTD,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+BOSCHLTD,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+BOSCHLTD,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+BOSCHLTD,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+BOSCHLTD,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+BOSCHLTD,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+BPCL,con,CON10,Low return on capital efficiency.,82
+BPCL,con,CON11,High debt limits financial flexibility.,78
+BPCL,con,CON2,Negative free cash flow raises concern about cash generation.,80
+BPCL,con,CON4,Operating margin is relatively weak.,75
+BPCL,con,CON5,Low return on equity indicates poor capital efficiency.,80
+BPCL,con,CON7,Dividend payout above 100% appears unsustainable.,88
+BPCL,con,CON8,Debt levels are relatively high.,82
+BPCL,con,CON9,Low earnings per share indicates weak profitability.,75
+BPCL,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+BPCL,pro,PRO10,Return on equity indicates strengthening business quality.,78
+BPCL,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+BPCL,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+BPCL,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+BPCL,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+BPCL,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+BRITANNIA,con,CON11,High debt limits financial flexibility.,78
+BRITANNIA,con,CON2,Negative free cash flow raises concern about cash generation.,80
+BRITANNIA,con,CON4,Operating margin is relatively weak.,75
+BRITANNIA,con,CON7,Dividend payout above 100% appears unsustainable.,88
+BRITANNIA,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+BRITANNIA,pro,PRO10,Return on equity indicates strengthening business quality.,78
+BRITANNIA,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+BRITANNIA,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+BRITANNIA,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+BRITANNIA,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+BRITANNIA,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+BRITANNIA,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+CANBK,con,CON1,Debt-to-equity ratio of 14.94 is elevated.,90
+CANBK,con,CON10,Low return on capital efficiency.,82
+CANBK,con,CON11,High debt limits financial flexibility.,78
+CANBK,con,CON2,Negative free cash flow raises concern about cash generation.,80
+CANBK,con,CON4,Operating margin is relatively weak.,75
+CANBK,con,CON5,Low return on equity indicates poor capital efficiency.,80
+CANBK,con,CON8,Debt levels are relatively high.,82
+CANBK,con,CON9,Low earnings per share indicates weak profitability.,75
+CANBK,pro,PRO10,Return on equity indicates strengthening business quality.,78
+CANBK,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+CANBK,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+CANBK,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+CHOLAFIN,con,CON1,Debt-to-equity ratio of 7.82 is elevated.,90
+CHOLAFIN,con,CON11,High debt limits financial flexibility.,78
+CHOLAFIN,con,CON2,Negative free cash flow raises concern about cash generation.,80
+CHOLAFIN,con,CON8,Debt levels are relatively high.,82
+CHOLAFIN,con,CON9,Low earnings per share indicates weak profitability.,75
+CHOLAFIN,pro,PRO10,Return on equity indicates strengthening business quality.,78
+CHOLAFIN,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+CHOLAFIN,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+CHOLAFIN,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+CIPLA,con,CON10,Low return on capital efficiency.,82
+CIPLA,con,CON11,High debt limits financial flexibility.,78
+CIPLA,con,CON2,Negative free cash flow raises concern about cash generation.,80
+CIPLA,con,CON5,Low return on equity indicates poor capital efficiency.,80
+CIPLA,pro,PRO10,Return on equity indicates strengthening business quality.,78
+CIPLA,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+CIPLA,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+CIPLA,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+CIPLA,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+CIPLA,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+CIPLA,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+CIPLA,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+COALINDIA,con,CON11,High debt limits financial flexibility.,78
+COALINDIA,con,CON7,Dividend payout above 100% appears unsustainable.,88
+COALINDIA,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+COALINDIA,pro,PRO10,Return on equity indicates strengthening business quality.,78
+COALINDIA,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+COALINDIA,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+COALINDIA,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+COALINDIA,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+COALINDIA,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+COALINDIA,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+COALINDIA,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+DABUR,con,CON11,High debt limits financial flexibility.,78
+DABUR,con,CON9,Low earnings per share indicates weak profitability.,75
+DABUR,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+DABUR,pro,PRO10,Return on equity indicates strengthening business quality.,78
+DABUR,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+DABUR,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+DABUR,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+DABUR,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+DABUR,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+DIVISLAB,con,CON2,Negative free cash flow raises concern about cash generation.,80
+DIVISLAB,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+DIVISLAB,pro,PRO10,Return on equity indicates strengthening business quality.,78
+DIVISLAB,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+DIVISLAB,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+DIVISLAB,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+DIVISLAB,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+DIVISLAB,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+DIVISLAB,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+DLF,con,CON10,Low return on capital efficiency.,82
+DLF,con,CON11,High debt limits financial flexibility.,78
+DLF,con,CON2,Negative free cash flow raises concern about cash generation.,80
+DLF,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+DLF,con,CON5,Low return on equity indicates poor capital efficiency.,80
+DLF,con,CON6,Low interest coverage increases financial risk.,90
+DLF,con,CON7,Dividend payout above 100% appears unsustainable.,88
+DLF,con,CON9,Low earnings per share indicates weak profitability.,75
+DLF,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+DLF,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+DLF,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+DLF,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+DMART,con,CON10,Low return on capital efficiency.,82
+DMART,con,CON11,High debt limits financial flexibility.,78
+DMART,con,CON2,Negative free cash flow raises concern about cash generation.,80
+DMART,con,CON4,Operating margin is relatively weak.,75
+DMART,con,CON5,Low return on equity indicates poor capital efficiency.,80
+DMART,con,CON9,Low earnings per share indicates weak profitability.,75
+DMART,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+DMART,pro,PRO10,Return on equity indicates strengthening business quality.,78
+DMART,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+DMART,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+DMART,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+DMART,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+DMART,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+DRREDDY,con,CON10,Low return on capital efficiency.,82
+DRREDDY,con,CON11,High debt limits financial flexibility.,78
+DRREDDY,con,CON2,Negative free cash flow raises concern about cash generation.,80
+DRREDDY,con,CON5,Low return on equity indicates poor capital efficiency.,80
+DRREDDY,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+DRREDDY,pro,PRO10,Return on equity indicates strengthening business quality.,78
+DRREDDY,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+DRREDDY,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+DRREDDY,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+DRREDDY,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+DRREDDY,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+DRREDDY,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+DRREDDY,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+EICHERMOT,con,CON2,Negative free cash flow raises concern about cash generation.,80
+EICHERMOT,con,CON4,Operating margin is relatively weak.,75
+EICHERMOT,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+EICHERMOT,pro,PRO10,Return on equity indicates strengthening business quality.,78
+EICHERMOT,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+EICHERMOT,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+EICHERMOT,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+EICHERMOT,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+EICHERMOT,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+EICHERMOT,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+EICHERMOT,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+GAIL,con,CON10,Low return on capital efficiency.,82
+GAIL,con,CON11,High debt limits financial flexibility.,78
+GAIL,con,CON2,Negative free cash flow raises concern about cash generation.,80
+GAIL,con,CON4,Operating margin is relatively weak.,75
+GAIL,con,CON5,Low return on equity indicates poor capital efficiency.,80
+GAIL,con,CON9,Low earnings per share indicates weak profitability.,75
+GAIL,pro,PRO10,Return on equity indicates strengthening business quality.,78
+GAIL,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+GAIL,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+GAIL,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+GAIL,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+GAIL,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+GODREJCP,con,CON10,Low return on capital efficiency.,82
+GODREJCP,con,CON11,High debt limits financial flexibility.,78
+GODREJCP,con,CON2,Negative free cash flow raises concern about cash generation.,80
+GODREJCP,con,CON5,Low return on equity indicates poor capital efficiency.,80
+GODREJCP,con,CON9,Low earnings per share indicates weak profitability.,75
+GODREJCP,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+GODREJCP,pro,PRO10,Return on equity indicates strengthening business quality.,78
+GODREJCP,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+GODREJCP,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+GODREJCP,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+GODREJCP,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+GODREJCP,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+GRASIM,con,CON10,Low return on capital efficiency.,82
+GRASIM,con,CON11,High debt limits financial flexibility.,78
+GRASIM,con,CON2,Negative free cash flow raises concern about cash generation.,80
+GRASIM,con,CON5,Low return on equity indicates poor capital efficiency.,80
+GRASIM,con,CON8,Debt levels are relatively high.,82
+GRASIM,pro,PRO10,Return on equity indicates strengthening business quality.,78
+GRASIM,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+GRASIM,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+GRASIM,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+GRASIM,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+GRASIM,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+GRASIM,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+HAL,con,CON2,Negative free cash flow raises concern about cash generation.,80
+HAL,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+HAL,pro,PRO10,Return on equity indicates strengthening business quality.,78
+HAL,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+HAL,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+HAL,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+HAL,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+HAL,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+HAL,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+HAL,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+HAVELLS,con,CON11,High debt limits financial flexibility.,78
+HAVELLS,con,CON2,Negative free cash flow raises concern about cash generation.,80
+HAVELLS,con,CON4,Operating margin is relatively weak.,75
+HAVELLS,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+HAVELLS,pro,PRO10,Return on equity indicates strengthening business quality.,78
+HAVELLS,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+HAVELLS,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+HAVELLS,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+HAVELLS,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+HAVELLS,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+HCLTECH,con,CON11,High debt limits financial flexibility.,78
+HCLTECH,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+HCLTECH,pro,PRO10,Return on equity indicates strengthening business quality.,78
+HCLTECH,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+HCLTECH,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+HCLTECH,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+HCLTECH,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+HCLTECH,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+HCLTECH,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+HCLTECH,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+HDFCBANK,con,CON1,Debt-to-equity ratio of 9.16 is elevated.,90
+HDFCBANK,con,CON11,High debt limits financial flexibility.,78
+HDFCBANK,con,CON2,Negative free cash flow raises concern about cash generation.,80
+HDFCBANK,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+HDFCBANK,con,CON4,Operating margin is relatively weak.,75
+HDFCBANK,con,CON6,Low interest coverage increases financial risk.,90
+HDFCBANK,con,CON8,Debt levels are relatively high.,82
+HDFCBANK,pro,PRO10,Return on equity indicates strengthening business quality.,78
+HDFCBANK,pro,PRO11,"Profits are compounding faster than revenue, indicating operating leverage.",83
+HDFCBANK,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+HDFCBANK,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+HDFCBANK,pro,PRO6,Net profit compounding above 20% creates significant shareholder value.,88
+HDFCBANK,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+HDFCBANK,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+HDFCLIFE,con,CON10,Low return on capital efficiency.,82
+HDFCLIFE,con,CON2,Negative free cash flow raises concern about cash generation.,80
+HDFCLIFE,con,CON5,Low return on equity indicates poor capital efficiency.,80
+HDFCLIFE,con,CON9,Low earnings per share indicates weak profitability.,75
+HDFCLIFE,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+HDFCLIFE,pro,PRO10,Return on equity indicates strengthening business quality.,78
+HDFCLIFE,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+HDFCLIFE,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+HDFCLIFE,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+HDFCLIFE,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+HDFCLIFE,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+HDFCLIFE,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+HDFCLIFE,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+HEROMOTOCO,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+HEROMOTOCO,pro,PRO10,Return on equity indicates strengthening business quality.,78
+HEROMOTOCO,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+HEROMOTOCO,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+HEROMOTOCO,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+HEROMOTOCO,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+HEROMOTOCO,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+HEROMOTOCO,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+HEROMOTOCO,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+HINDALCO,con,CON10,Low return on capital efficiency.,82
+HINDALCO,con,CON11,High debt limits financial flexibility.,78
+HINDALCO,con,CON2,Negative free cash flow raises concern about cash generation.,80
+HINDALCO,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+HINDALCO,con,CON5,Low return on equity indicates poor capital efficiency.,80
+HINDALCO,con,CON6,Low interest coverage increases financial risk.,90
+HINDALCO,con,CON8,Debt levels are relatively high.,82
+HINDALCO,con,CON9,Low earnings per share indicates weak profitability.,75
+HINDALCO,pro,PRO10,Return on equity indicates strengthening business quality.,78
+HINDALCO,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+HINDALCO,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+HINDALCO,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+HINDALCO,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+HINDALCO,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+HINDALCO,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+HINDUNILVR,con,CON11,High debt limits financial flexibility.,78
+HINDUNILVR,con,CON7,Dividend payout above 100% appears unsustainable.,88
+HINDUNILVR,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+HINDUNILVR,pro,PRO10,Return on equity indicates strengthening business quality.,78
+HINDUNILVR,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+HINDUNILVR,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+HINDUNILVR,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+HINDUNILVR,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+HINDUNILVR,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+HINDUNILVR,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+HINDUNILVR,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+ICICIBANK,con,CON1,Debt-to-equity ratio of 7.09 is elevated.,90
+ICICIBANK,con,CON10,Low return on capital efficiency.,82
+ICICIBANK,con,CON11,High debt limits financial flexibility.,78
+ICICIBANK,con,CON2,Negative free cash flow raises concern about cash generation.,80
+ICICIBANK,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+ICICIBANK,con,CON4,Operating margin is relatively weak.,75
+ICICIBANK,con,CON5,Low return on equity indicates poor capital efficiency.,80
+ICICIBANK,con,CON6,Low interest coverage increases financial risk.,90
+ICICIBANK,con,CON8,Debt levels are relatively high.,82
+ICICIBANK,pro,PRO10,Return on equity indicates strengthening business quality.,78
+ICICIBANK,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ICICIBANK,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+ICICIBANK,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+ICICIGI,con,CON2,Negative free cash flow raises concern about cash generation.,80
+ICICIGI,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+ICICIGI,con,CON4,Operating margin is relatively weak.,75
+ICICIGI,con,CON6,Low interest coverage increases financial risk.,90
+ICICIGI,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+ICICIGI,pro,PRO10,Return on equity indicates strengthening business quality.,78
+ICICIGI,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+ICICIGI,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ICICIGI,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+ICICIGI,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+ICICIGI,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+ICICIGI,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+ICICIGI,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+ICICIPRULI,con,CON10,Low return on capital efficiency.,82
+ICICIPRULI,con,CON11,High debt limits financial flexibility.,78
+ICICIPRULI,con,CON2,Negative free cash flow raises concern about cash generation.,80
+ICICIPRULI,con,CON4,Operating margin is relatively weak.,75
+ICICIPRULI,con,CON5,Low return on equity indicates poor capital efficiency.,80
+ICICIPRULI,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+ICICIPRULI,pro,PRO10,Return on equity indicates strengthening business quality.,78
+ICICIPRULI,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+ICICIPRULI,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ICICIPRULI,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+ICICIPRULI,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+ICICIPRULI,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+ICICIPRULI,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+ICICIPRULI,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+INDIGO,con,CON1,Debt-to-equity ratio of 2.50 is elevated.,90
+INDIGO,con,CON10,Low return on capital efficiency.,82
+INDIGO,con,CON2,Negative free cash flow raises concern about cash generation.,80
+INDIGO,con,CON4,Operating margin is relatively weak.,75
+INDIGO,con,CON5,Low return on equity indicates poor capital efficiency.,80
+INDIGO,con,CON7,Dividend payout above 100% appears unsustainable.,88
+INDIGO,con,CON8,Debt levels are relatively high.,82
+INDIGO,con,CON9,Low earnings per share indicates weak profitability.,75
+INDIGO,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+INDIGO,pro,PRO10,Return on equity indicates strengthening business quality.,78
+INDIGO,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+INDIGO,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+INDIGO,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+INDIGO,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+INDIGO,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+INDIGO,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+INDIGO,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+INDUSINDBK,con,CON1,Debt-to-equity ratio of 8.33 is elevated.,90
+INDUSINDBK,con,CON10,Low return on capital efficiency.,82
+INDUSINDBK,con,CON11,High debt limits financial flexibility.,78
+INDUSINDBK,con,CON2,Negative free cash flow raises concern about cash generation.,80
+INDUSINDBK,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+INDUSINDBK,con,CON4,Operating margin is relatively weak.,75
+INDUSINDBK,con,CON5,Low return on equity indicates poor capital efficiency.,80
+INDUSINDBK,con,CON6,Low interest coverage increases financial risk.,90
+INDUSINDBK,con,CON8,Debt levels are relatively high.,82
+INDUSINDBK,pro,PRO10,Return on equity indicates strengthening business quality.,78
+INDUSINDBK,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+INDUSINDBK,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+INDUSINDBK,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+INDUSINDBK,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+INFY,con,CON11,High debt limits financial flexibility.,78
+INFY,con,CON12,Revenue growth below 5% suggests limited business momentum.,85
+INFY,con,CON2,Negative free cash flow raises concern about cash generation.,80
+INFY,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+INFY,pro,PRO10,Return on equity indicates strengthening business quality.,78
+INFY,pro,PRO11,"Profits are compounding faster than revenue, indicating operating leverage.",83
+INFY,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+INFY,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+INFY,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+INFY,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+INFY,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+INFY,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+INFY,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+INFY,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+IOC,con,CON10,Low return on capital efficiency.,82
+IOC,con,CON11,High debt limits financial flexibility.,78
+IOC,con,CON2,Negative free cash flow raises concern about cash generation.,80
+IOC,con,CON4,Operating margin is relatively weak.,75
+IOC,con,CON5,Low return on equity indicates poor capital efficiency.,80
+IOC,con,CON9,Low earnings per share indicates weak profitability.,75
+IOC,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+IOC,pro,PRO10,Return on equity indicates strengthening business quality.,78
+IOC,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+IOC,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+IOC,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+IOC,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+IRCTC,con,CON2,Negative free cash flow raises concern about cash generation.,80
+IRCTC,con,CON9,Low earnings per share indicates weak profitability.,75
+IRCTC,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+IRCTC,pro,PRO10,Return on equity indicates strengthening business quality.,78
+IRCTC,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+IRCTC,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+IRCTC,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+IRCTC,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+IRCTC,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+IRCTC,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+IRCTC,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+IRFC,con,CON1,Debt-to-equity ratio of 7.59 is elevated.,90
+IRFC,con,CON10,Low return on capital efficiency.,82
+IRFC,con,CON11,High debt limits financial flexibility.,78
+IRFC,con,CON2,Negative free cash flow raises concern about cash generation.,80
+IRFC,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+IRFC,con,CON5,Low return on equity indicates poor capital efficiency.,80
+IRFC,con,CON6,Low interest coverage increases financial risk.,90
+IRFC,con,CON8,Debt levels are relatively high.,82
+IRFC,con,CON9,Low earnings per share indicates weak profitability.,75
+IRFC,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+IRFC,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+IRFC,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+IRFC,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+ITC,con,CON7,Dividend payout above 100% appears unsustainable.,88
+ITC,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+ITC,pro,PRO10,Return on equity indicates strengthening business quality.,78
+ITC,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+ITC,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ITC,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+ITC,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+ITC,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+ITC,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+JINDALSTEL,con,CON1,Debt-to-equity ratio of 2.16 is elevated.,90
+JINDALSTEL,con,CON10,Low return on capital efficiency.,82
+JINDALSTEL,con,CON11,High debt limits financial flexibility.,78
+JINDALSTEL,con,CON2,Negative free cash flow raises concern about cash generation.,80
+JINDALSTEL,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+JINDALSTEL,con,CON5,Low return on equity indicates poor capital efficiency.,80
+JINDALSTEL,con,CON6,Low interest coverage increases financial risk.,90
+JINDALSTEL,con,CON8,Debt levels are relatively high.,82
+JINDALSTEL,con,CON9,Low earnings per share indicates weak profitability.,75
+JINDALSTEL,pro,PRO10,Return on equity indicates strengthening business quality.,78
+JINDALSTEL,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+JINDALSTEL,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+JINDALSTEL,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+JINDALSTEL,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+JINDALSTEL,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+JIOFIN,con,CON10,Low return on capital efficiency.,82
+JIOFIN,con,CON5,Low return on equity indicates poor capital efficiency.,80
+JIOFIN,con,CON9,Low earnings per share indicates weak profitability.,75
+JIOFIN,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+JIOFIN,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+JIOFIN,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+JIOFIN,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+JIOFIN,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+JIOFIN,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+JIOFIN,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+JSWENERGY,con,CON10,Low return on capital efficiency.,82
+JSWENERGY,con,CON11,High debt limits financial flexibility.,78
+JSWENERGY,con,CON2,Negative free cash flow raises concern about cash generation.,80
+JSWENERGY,con,CON5,Low return on equity indicates poor capital efficiency.,80
+JSWENERGY,con,CON8,Debt levels are relatively high.,82
+JSWENERGY,con,CON9,Low earnings per share indicates weak profitability.,75
+JSWENERGY,pro,PRO10,Return on equity indicates strengthening business quality.,78
+JSWENERGY,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+JSWENERGY,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+JSWENERGY,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+JSWSTEEL,con,CON1,Debt-to-equity ratio of 2.23 is elevated.,90
+JSWSTEEL,con,CON10,Low return on capital efficiency.,82
+JSWSTEEL,con,CON11,High debt limits financial flexibility.,78
+JSWSTEEL,con,CON2,Negative free cash flow raises concern about cash generation.,80
+JSWSTEEL,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+JSWSTEEL,con,CON5,Low return on equity indicates poor capital efficiency.,80
+JSWSTEEL,con,CON6,Low interest coverage increases financial risk.,90
+JSWSTEEL,con,CON8,Debt levels are relatively high.,82
+JSWSTEEL,con,CON9,Low earnings per share indicates weak profitability.,75
+JSWSTEEL,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+JSWSTEEL,pro,PRO10,Return on equity indicates strengthening business quality.,78
+JSWSTEEL,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+JSWSTEEL,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+JSWSTEEL,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+JSWSTEEL,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+KOTAKBANK,con,CON1,Debt-to-equity ratio of 5.60 is elevated.,90
+KOTAKBANK,con,CON11,High debt limits financial flexibility.,78
+KOTAKBANK,con,CON2,Negative free cash flow raises concern about cash generation.,80
+KOTAKBANK,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+KOTAKBANK,con,CON4,Operating margin is relatively weak.,75
+KOTAKBANK,con,CON6,Low interest coverage increases financial risk.,90
+KOTAKBANK,con,CON8,Debt levels are relatively high.,82
+KOTAKBANK,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+KOTAKBANK,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+KOTAKBANK,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+LICI,con,CON1,Debt-to-equity ratio of 332.59 is elevated.,90
+LICI,con,CON11,High debt limits financial flexibility.,78
+LICI,con,CON4,Operating margin is relatively weak.,75
+LICI,con,CON8,Debt levels are relatively high.,82
+LICI,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+LICI,pro,PRO10,Return on equity indicates strengthening business quality.,78
+LICI,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+LICI,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+LICI,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+LICI,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+LICI,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+LICI,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+LICI,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+LODHA,con,CON1,Debt-to-equity ratio of 3.48 is elevated.,90
+LODHA,con,CON10,Low return on capital efficiency.,82
+LODHA,con,CON11,High debt limits financial flexibility.,78
+LODHA,con,CON2,Negative free cash flow raises concern about cash generation.,80
+LODHA,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+LODHA,con,CON5,Low return on equity indicates poor capital efficiency.,80
+LODHA,con,CON6,Low interest coverage increases financial risk.,90
+LODHA,con,CON8,Debt levels are relatively high.,82
+LODHA,con,CON9,Low earnings per share indicates weak profitability.,75
+LODHA,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+LODHA,pro,PRO10,Return on equity indicates strengthening business quality.,78
+LODHA,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+LODHA,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+LODHA,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+LODHA,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+LT,con,CON11,High debt limits financial flexibility.,78
+LT,con,CON2,Negative free cash flow raises concern about cash generation.,80
+LT,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+LT,pro,PRO10,Return on equity indicates strengthening business quality.,78
+LT,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+LT,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+LT,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+LT,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+LT,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+LT,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+LTIM,con,CON11,High debt limits financial flexibility.,78
+LTIM,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+LTIM,pro,PRO10,Return on equity indicates strengthening business quality.,78
+LTIM,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+LTIM,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+LTIM,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+LTIM,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+LTIM,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+LTIM,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+LTIM,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+M&M,con,CON1,Debt-to-equity ratio of 2.05 is elevated.,90
+M&M,con,CON10,Low return on capital efficiency.,82
+M&M,con,CON11,High debt limits financial flexibility.,78
+M&M,con,CON2,Negative free cash flow raises concern about cash generation.,80
+M&M,con,CON5,Low return on equity indicates poor capital efficiency.,80
+M&M,con,CON7,Dividend payout above 100% appears unsustainable.,88
+M&M,con,CON8,Debt levels are relatively high.,82
+M&M,con,CON9,Low earnings per share indicates weak profitability.,75
+M&M,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+M&M,pro,PRO10,Return on equity indicates strengthening business quality.,78
+M&M,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+M&M,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+M&M,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+MARUTI,con,CON10,Low return on capital efficiency.,82
+MARUTI,con,CON11,High debt limits financial flexibility.,78
+MARUTI,con,CON2,Negative free cash flow raises concern about cash generation.,80
+MARUTI,con,CON4,Operating margin is relatively weak.,75
+MARUTI,con,CON5,Low return on equity indicates poor capital efficiency.,80
+MARUTI,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+MARUTI,pro,PRO10,Return on equity indicates strengthening business quality.,78
+MARUTI,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+MARUTI,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+MARUTI,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+MARUTI,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+MARUTI,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+MARUTI,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+MOTHERSON,con,CON1,Debt-to-equity ratio of 2.14 is elevated.,90
+MOTHERSON,con,CON10,Low return on capital efficiency.,82
+MOTHERSON,con,CON11,High debt limits financial flexibility.,78
+MOTHERSON,con,CON2,Negative free cash flow raises concern about cash generation.,80
+MOTHERSON,con,CON4,Operating margin is relatively weak.,75
+MOTHERSON,con,CON5,Low return on equity indicates poor capital efficiency.,80
+MOTHERSON,con,CON8,Debt levels are relatively high.,82
+MOTHERSON,con,CON9,Low earnings per share indicates weak profitability.,75
+MOTHERSON,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+MOTHERSON,pro,PRO10,Return on equity indicates strengthening business quality.,78
+MOTHERSON,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+MOTHERSON,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+MOTHERSON,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+MOTHERSON,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+NAUKRI,con,CON10,Low return on capital efficiency.,82
+NAUKRI,con,CON2,Negative free cash flow raises concern about cash generation.,80
+NAUKRI,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+NAUKRI,con,CON4,Operating margin is relatively weak.,75
+NAUKRI,con,CON5,Low return on equity indicates poor capital efficiency.,80
+NAUKRI,con,CON6,Low interest coverage increases financial risk.,90
+NAUKRI,con,CON7,Dividend payout above 100% appears unsustainable.,88
+NAUKRI,con,CON9,Low earnings per share indicates weak profitability.,75
+NAUKRI,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+NAUKRI,pro,PRO10,Return on equity indicates strengthening business quality.,78
+NAUKRI,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+NAUKRI,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+NAUKRI,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+NAUKRI,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+NAUKRI,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+NAUKRI,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+NAUKRI,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+NESTLEIND,con,CON11,High debt limits financial flexibility.,78
+NESTLEIND,con,CON7,Dividend payout above 100% appears unsustainable.,88
+NESTLEIND,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+NESTLEIND,pro,PRO10,Return on equity indicates strengthening business quality.,78
+NESTLEIND,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+NESTLEIND,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+NESTLEIND,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+NESTLEIND,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+NESTLEIND,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+NHPC,con,CON10,Low return on capital efficiency.,82
+NHPC,con,CON11,High debt limits financial flexibility.,78
+NHPC,con,CON5,Low return on equity indicates poor capital efficiency.,80
+NHPC,con,CON9,Low earnings per share indicates weak profitability.,75
+NHPC,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+NHPC,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+NHPC,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+NHPC,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+NHPC,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+NTPC,con,CON11,High debt limits financial flexibility.,78
+NTPC,con,CON2,Negative free cash flow raises concern about cash generation.,80
+NTPC,con,CON8,Debt levels are relatively high.,82
+NTPC,pro,PRO10,Return on equity indicates strengthening business quality.,78
+NTPC,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+NTPC,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+NTPC,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+ONGC,con,CON10,Low return on capital efficiency.,82
+ONGC,con,CON11,High debt limits financial flexibility.,78
+ONGC,con,CON2,Negative free cash flow raises concern about cash generation.,80
+ONGC,con,CON5,Low return on equity indicates poor capital efficiency.,80
+ONGC,pro,PRO10,Return on equity indicates strengthening business quality.,78
+ONGC,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+ONGC,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ONGC,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+ONGC,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+ONGC,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+ONGC,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+PFC,con,CON1,Debt-to-equity ratio of 5.89 is elevated.,90
+PFC,con,CON10,Low return on capital efficiency.,82
+PFC,con,CON11,High debt limits financial flexibility.,78
+PFC,con,CON2,Negative free cash flow raises concern about cash generation.,80
+PFC,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+PFC,con,CON5,Low return on equity indicates poor capital efficiency.,80
+PFC,con,CON6,Low interest coverage increases financial risk.,90
+PFC,con,CON8,Debt levels are relatively high.,82
+PFC,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+PFC,pro,PRO10,Return on equity indicates strengthening business quality.,78
+PFC,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+PFC,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+PFC,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+PIDILITIND,con,CON2,Negative free cash flow raises concern about cash generation.,80
+PIDILITIND,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+PIDILITIND,pro,PRO10,Return on equity indicates strengthening business quality.,78
+PIDILITIND,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+PIDILITIND,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+PIDILITIND,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+PIDILITIND,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+PIDILITIND,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+PNB,con,CON1,Debt-to-equity ratio of 10.83 is elevated.,90
+PNB,con,CON10,Low return on capital efficiency.,82
+PNB,con,CON11,High debt limits financial flexibility.,78
+PNB,con,CON2,Negative free cash flow raises concern about cash generation.,80
+PNB,con,CON5,Low return on equity indicates poor capital efficiency.,80
+PNB,con,CON8,Debt levels are relatively high.,82
+PNB,con,CON9,Low earnings per share indicates weak profitability.,75
+PNB,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+PNB,pro,PRO10,Return on equity indicates strengthening business quality.,78
+PNB,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+PNB,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+POWERGRID,con,CON1,Debt-to-equity ratio of 2.62 is elevated.,90
+POWERGRID,con,CON11,High debt limits financial flexibility.,78
+POWERGRID,con,CON2,Negative free cash flow raises concern about cash generation.,80
+POWERGRID,con,CON8,Debt levels are relatively high.,82
+POWERGRID,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+POWERGRID,pro,PRO10,Return on equity indicates strengthening business quality.,78
+POWERGRID,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+POWERGRID,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+POWERGRID,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+RECLTD,con,CON1,Debt-to-equity ratio of 6.15 is elevated.,90
+RECLTD,con,CON11,High debt limits financial flexibility.,78
+RECLTD,con,CON2,Negative free cash flow raises concern about cash generation.,80
+RECLTD,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+RECLTD,con,CON6,Low interest coverage increases financial risk.,90
+RECLTD,con,CON8,Debt levels are relatively high.,82
+RECLTD,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+RECLTD,pro,PRO10,Return on equity indicates strengthening business quality.,78
+RECLTD,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+RECLTD,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+RECLTD,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+RECLTD,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+RELIANCE,con,CON10,Low return on capital efficiency.,82
+RELIANCE,con,CON11,High debt limits financial flexibility.,78
+RELIANCE,con,CON2,Negative free cash flow raises concern about cash generation.,80
+RELIANCE,con,CON4,Operating margin is relatively weak.,75
+RELIANCE,con,CON5,Low return on equity indicates poor capital efficiency.,80
+RELIANCE,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+RELIANCE,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+RELIANCE,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+RELIANCE,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+RELIANCE,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+RELIANCE,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+SBILIFE,con,CON2,Negative free cash flow raises concern about cash generation.,80
+SBILIFE,con,CON4,Operating margin is relatively weak.,75
+SBILIFE,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+SBILIFE,pro,PRO10,Return on equity indicates strengthening business quality.,78
+SBILIFE,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+SBILIFE,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+SBILIFE,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+SBILIFE,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+SBILIFE,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+SBILIFE,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+SHREECEM,con,CON10,Low return on capital efficiency.,82
+SHREECEM,con,CON11,High debt limits financial flexibility.,78
+SHREECEM,con,CON2,Negative free cash flow raises concern about cash generation.,80
+SHREECEM,con,CON5,Low return on equity indicates poor capital efficiency.,80
+SHREECEM,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+SHREECEM,pro,PRO10,Return on equity indicates strengthening business quality.,78
+SHREECEM,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+SHREECEM,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+SHREECEM,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+SHREECEM,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+SHREECEM,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+SHREECEM,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+SHREECEM,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+SHRIRAMFIN,con,CON1,Debt-to-equity ratio of 4.55 is elevated.,90
+SHRIRAMFIN,con,CON11,High debt limits financial flexibility.,78
+SHRIRAMFIN,con,CON2,Negative free cash flow raises concern about cash generation.,80
+SHRIRAMFIN,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+SHRIRAMFIN,con,CON6,Low interest coverage increases financial risk.,90
+SHRIRAMFIN,con,CON8,Debt levels are relatively high.,82
+SHRIRAMFIN,pro,PRO10,Return on equity indicates strengthening business quality.,78
+SHRIRAMFIN,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+SIEMENS,con,CON10,Low return on capital efficiency.,82
+SIEMENS,con,CON2,Negative free cash flow raises concern about cash generation.,80
+SIEMENS,con,CON4,Operating margin is relatively weak.,75
+SIEMENS,con,CON5,Low return on equity indicates poor capital efficiency.,80
+SIEMENS,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+SIEMENS,pro,PRO10,Return on equity indicates strengthening business quality.,78
+SIEMENS,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+SIEMENS,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+SIEMENS,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+SIEMENS,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+SIEMENS,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+SIEMENS,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+SIEMENS,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+SUNPHARMA,con,CON10,Low return on capital efficiency.,82
+SUNPHARMA,con,CON11,High debt limits financial flexibility.,78
+SUNPHARMA,con,CON2,Negative free cash flow raises concern about cash generation.,80
+SUNPHARMA,con,CON5,Low return on equity indicates poor capital efficiency.,80
+SUNPHARMA,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+SUNPHARMA,pro,PRO10,Return on equity indicates strengthening business quality.,78
+SUNPHARMA,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+SUNPHARMA,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+SUNPHARMA,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+SUNPHARMA,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+SUNPHARMA,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+SUNPHARMA,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+TATACONSUM,con,CON10,Low return on capital efficiency.,82
+TATACONSUM,con,CON11,High debt limits financial flexibility.,78
+TATACONSUM,con,CON4,Operating margin is relatively weak.,75
+TATACONSUM,con,CON5,Low return on equity indicates poor capital efficiency.,80
+TATACONSUM,con,CON9,Low earnings per share indicates weak profitability.,75
+TATACONSUM,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+TATACONSUM,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+TATACONSUM,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+TATACONSUM,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+TATACONSUM,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+TATAMOTORS,con,CON1,Debt-to-equity ratio of 2.57 is elevated.,90
+TATAMOTORS,con,CON10,Low return on capital efficiency.,82
+TATAMOTORS,con,CON11,High debt limits financial flexibility.,78
+TATAMOTORS,con,CON2,Negative free cash flow raises concern about cash generation.,80
+TATAMOTORS,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+TATAMOTORS,con,CON4,Operating margin is relatively weak.,75
+TATAMOTORS,con,CON5,Low return on equity indicates poor capital efficiency.,80
+TATAMOTORS,con,CON6,Low interest coverage increases financial risk.,90
+TATAMOTORS,con,CON8,Debt levels are relatively high.,82
+TATAMOTORS,con,CON9,Low earnings per share indicates weak profitability.,75
+TATAMOTORS,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+TATAMOTORS,pro,PRO10,Return on equity indicates strengthening business quality.,78
+TATAMOTORS,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+TATAMOTORS,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+TATAMOTORS,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+TATAPOWER,con,CON1,Debt-to-equity ratio of 3.07 is elevated.,90
+TATAPOWER,con,CON10,Low return on capital efficiency.,82
+TATAPOWER,con,CON11,High debt limits financial flexibility.,78
+TATAPOWER,con,CON2,Negative free cash flow raises concern about cash generation.,80
+TATAPOWER,con,CON4,Operating margin is relatively weak.,75
+TATAPOWER,con,CON5,Low return on equity indicates poor capital efficiency.,80
+TATAPOWER,con,CON7,Dividend payout above 100% appears unsustainable.,88
+TATAPOWER,con,CON8,Debt levels are relatively high.,82
+TATAPOWER,con,CON9,Low earnings per share indicates weak profitability.,75
+TATAPOWER,pro,PRO10,Return on equity indicates strengthening business quality.,78
+TATAPOWER,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+TATAPOWER,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+TATASTEEL,con,CON1,Debt-to-equity ratio of 2.01 is elevated.,90
+TATASTEEL,con,CON10,Low return on capital efficiency.,82
+TATASTEEL,con,CON11,High debt limits financial flexibility.,78
+TATASTEEL,con,CON2,Negative free cash flow raises concern about cash generation.,80
+TATASTEEL,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+TATASTEEL,con,CON4,Operating margin is relatively weak.,75
+TATASTEEL,con,CON5,Low return on equity indicates poor capital efficiency.,80
+TATASTEEL,con,CON6,Low interest coverage increases financial risk.,90
+TATASTEEL,con,CON8,Debt levels are relatively high.,82
+TATASTEEL,con,CON9,Low earnings per share indicates weak profitability.,75
+TATASTEEL,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+TATASTEEL,pro,PRO10,Return on equity indicates strengthening business quality.,78
+TATASTEEL,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+TATASTEEL,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+TATASTEEL,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+TATASTEEL,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+TATASTEEL,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+TCS,con,CON11,High debt limits financial flexibility.,78
+TCS,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+TCS,pro,PRO10,Return on equity indicates strengthening business quality.,78
+TCS,pro,PRO11,"Profits are compounding faster than revenue, indicating operating leverage.",83
+TCS,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+TCS,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+TCS,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+TCS,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+TCS,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+TCS,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+TCS,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+TECHM,con,CON10,Low return on capital efficiency.,82
+TECHM,con,CON11,High debt limits financial flexibility.,78
+TECHM,con,CON4,Operating margin is relatively weak.,75
+TECHM,con,CON5,Low return on equity indicates poor capital efficiency.,80
+TECHM,con,CON7,Dividend payout above 100% appears unsustainable.,88
+TECHM,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+TECHM,pro,PRO10,Return on equity indicates strengthening business quality.,78
+TECHM,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+TECHM,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+TECHM,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+TECHM,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+TECHM,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+TECHM,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+TITAN,con,CON11,High debt limits financial flexibility.,78
+TITAN,con,CON2,Negative free cash flow raises concern about cash generation.,80
+TITAN,con,CON4,Operating margin is relatively weak.,75
+TITAN,con,CON8,Debt levels are relatively high.,82
+TITAN,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+TITAN,pro,PRO10,Return on equity indicates strengthening business quality.,78
+TITAN,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+TITAN,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+TITAN,pro,PRO3,Debt-free balance sheet provides financial flexibility.,95
+TITAN,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+TITAN,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+TITAN,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+TORNTPHARM,con,CON10,Low return on capital efficiency.,82
+TORNTPHARM,con,CON11,High debt limits financial flexibility.,78
+TORNTPHARM,con,CON2,Negative free cash flow raises concern about cash generation.,80
+TORNTPHARM,con,CON5,Low return on equity indicates poor capital efficiency.,80
+TORNTPHARM,con,CON7,Dividend payout above 100% appears unsustainable.,88
+TORNTPHARM,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+TORNTPHARM,pro,PRO10,Return on equity indicates strengthening business quality.,78
+TORNTPHARM,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+TORNTPHARM,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+TORNTPHARM,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+TORNTPHARM,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+TORNTPHARM,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+TORNTPHARM,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+TORNTPHARM,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+TRENT,con,CON10,Low return on capital efficiency.,82
+TRENT,con,CON11,High debt limits financial flexibility.,78
+TRENT,con,CON2,Negative free cash flow raises concern about cash generation.,80
+TRENT,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+TRENT,con,CON4,Operating margin is relatively weak.,75
+TRENT,con,CON5,Low return on equity indicates poor capital efficiency.,80
+TRENT,con,CON6,Low interest coverage increases financial risk.,90
+TRENT,con,CON8,Debt levels are relatively high.,82
+TRENT,con,CON9,Low earnings per share indicates weak profitability.,75
+TRENT,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+TRENT,pro,PRO10,Return on equity indicates strengthening business quality.,78
+TRENT,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+TRENT,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+TRENT,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+TRENT,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+TRENT,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+TVSMOTOR,con,CON1,Debt-to-equity ratio of 2.59 is elevated.,90
+TVSMOTOR,con,CON11,High debt limits financial flexibility.,78
+TVSMOTOR,con,CON2,Negative free cash flow raises concern about cash generation.,80
+TVSMOTOR,con,CON4,Operating margin is relatively weak.,75
+TVSMOTOR,con,CON8,Debt levels are relatively high.,82
+TVSMOTOR,con,CON9,Low earnings per share indicates weak profitability.,75
+TVSMOTOR,pro,PRO1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,90
+TVSMOTOR,pro,PRO10,Return on equity indicates strengthening business quality.,78
+TVSMOTOR,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+TVSMOTOR,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+TVSMOTOR,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+TVSMOTOR,pro,PRO8,Dividend yield above 2% backed by positive free cash flow.,84
+ULTRACEMCO,con,CON10,Low return on capital efficiency.,82
+ULTRACEMCO,con,CON11,High debt limits financial flexibility.,78
+ULTRACEMCO,con,CON2,Negative free cash flow raises concern about cash generation.,80
+ULTRACEMCO,con,CON5,Low return on equity indicates poor capital efficiency.,80
+ULTRACEMCO,pro,PRO10,Return on equity indicates strengthening business quality.,78
+ULTRACEMCO,pro,PRO12,Low leverage supports long-term sustainable growth.,80
+ULTRACEMCO,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
+ULTRACEMCO,pro,PRO4,Operating profit margin above 25% indicates strong pricing power.,85
+ULTRACEMCO,pro,PRO5,Very high interest coverage reflects negligible financial stress.,80
+ULTRACEMCO,pro,PRO7,Strong balance-sheet quality reduces financial stress.,82
+ULTRACEMCO,pro,PRO9,Strong earnings per share indicates healthy earnings quality.,80
+UNIONBANK,con,CON1,Debt-to-equity ratio of 16.61 is elevated.,90
+UNIONBANK,con,CON10,Low return on capital efficiency.,82
+UNIONBANK,con,CON11,High debt limits financial flexibility.,78
+UNIONBANK,con,CON2,Negative free cash flow raises concern about cash generation.,80
+UNIONBANK,con,CON3,Interest coverage below 1.5x indicates debt servicing risk.,85
+UNIONBANK,con,CON4,Operating margin is relatively weak.,75
+UNIONBANK,con,CON5,Low return on equity indicates poor capital efficiency.,80
+UNIONBANK,con,CON6,Low interest coverage increases financial risk.,90
+UNIONBANK,con,CON8,Debt levels are relatively high.,82
+UNIONBANK,con,CON9,Low earnings per share indicates weak profitability.,75
+UNIONBANK,pro,PRO2,Strong free cash flow generation signals healthy business fundamentals.,85
