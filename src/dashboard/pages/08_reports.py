@@ -1,10 +1,9 @@
-import streamlit as st
 import pandas as pd
-
+import streamlit as st
 from utils.db import (
     get_companies,
-    get_reports,
     get_dashboard_data,
+    get_reports,
 )
 
 st.set_page_config(layout="wide")
@@ -17,22 +16,14 @@ if companies.empty:
     st.error("No companies found.")
     st.stop()
 
-company = st.selectbox(
-    "Select Company",
-    companies["company_name"]
-)
+company = st.selectbox("Select Company", companies["company_name"])
 
-ticker = companies.loc[
-    companies["company_name"] == company,
-    "id"
-].iloc[0]
+ticker = companies.loc[companies["company_name"] == company, "id"].iloc[0]
 
 reports = get_reports(ticker)
 
 year = st.sidebar.selectbox(
-    "Financial Year",
-    [2019, 2020, 2021, 2022, 2023, 2024],
-    index=5
+    "Financial Year", [2019, 2020, 2021, 2022, 2023, 2024], index=5
 )
 
 dashboard = get_dashboard_data(year)
@@ -55,9 +46,7 @@ else:
 
         for _, row in reports.iterrows():
 
-            st.markdown(
-                f"**{row['year']} Report:** {row['annual_report']}"
-            )
+            st.markdown(f"**{row['year']} Report:** {row['annual_report']}")
 
 st.divider()
 
@@ -65,25 +54,13 @@ st.subheader("📊 Dashboard Summary")
 
 c1, c2, c3, c4 = st.columns(4)
 
-c1.metric(
-    "Companies",
-    len(dashboard)
-)
+c1.metric("Companies", len(dashboard))
 
-c2.metric(
-    "Average ROE",
-    f"{dashboard['return_on_equity_pct'].mean():.2f}%"
-)
+c2.metric("Average ROE", f"{dashboard['return_on_equity_pct'].mean():.2f}%")
 
-c3.metric(
-    "Average PE",
-    f"{dashboard['pe_ratio'].mean():.2f}"
-)
+c3.metric("Average PE", f"{dashboard['pe_ratio'].mean():.2f}")
 
-c4.metric(
-    "Total Market Cap",
-    f"{dashboard['market_cap_crore'].sum():,.0f} Cr"
-)
+c4.metric("Total Market Cap", f"{dashboard['market_cap_crore'].sum():,.0f} Cr")
 
 st.divider()
 
@@ -100,16 +77,9 @@ st.download_button(
 
 st.subheader("📊 Export Excel")
 
-excel_buffer = pd.ExcelWriter(
-    "dashboard_report.xlsx",
-    engine="openpyxl"
-)
+excel_buffer = pd.ExcelWriter("dashboard_report.xlsx", engine="openpyxl")
 
-dashboard.to_excel(
-    excel_buffer,
-    index=False,
-    sheet_name="Dashboard"
-)
+dashboard.to_excel(excel_buffer, index=False, sheet_name="Dashboard")
 
 excel_buffer.close()
 
@@ -131,4 +101,3 @@ st.dataframe(
     use_container_width=True,
     hide_index=True,
 )
-

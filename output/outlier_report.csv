@@ -1,0 +1,6 @@
+company_id,sector,metric,value,z_score
+INDIGO,Consumer Discretionary,return_on_equity_pct,892.57,3.6121939140195907
+INDIGO,Consumer Discretionary,operating_profit_margin_pct,16331.0,3.436250405767625
+TATAMOTORS,Consumer Discretionary,free_cash_flow_cr,45133.0,3.3364497408285425
+ADANIGREEN,Energy,debt_to_equity,6.5953,3.1510643148913804
+HDFCBANK,Financials,operating_profit_margin_pct,-44685.0,-3.5268173841681363

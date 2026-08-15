@@ -1,6 +1,5 @@
-import streamlit as st
 import pandas as pd
-
+import streamlit as st
 from utils.db import get_dashboard_data
 
 st.set_page_config(layout="wide")
@@ -8,9 +7,7 @@ st.set_page_config(layout="wide")
 st.title("🔍 Stock Screener")
 
 year = st.sidebar.selectbox(
-    "Financial Year",
-    [2019, 2020, 2021, 2022, 2023, 2024],
-    index=5
+    "Financial Year", [2019, 2020, 2021, 2022, 2023, 2024], index=5
 )
 
 df = get_dashboard_data(year)
@@ -92,7 +89,7 @@ max_pe = st.sidebar.slider(
     "Maximum PE",
     0,
     100,
-    pe if pe < 100 else 100,
+    min(100, pe),
 )
 
 max_de = st.sidebar.slider(
@@ -136,14 +133,11 @@ filtered = df.copy()
 
 filtered = filtered[
     (filtered["return_on_equity_pct"] >= min_roe)
-    &
-    (filtered["pe_ratio"] <= max_pe)
-    &
-    (filtered["debt_to_equity"] <= max_de)
-   # &
-    #(filtered["compounded_sales_growth"] >= min_growth)
-    &
-    (filtered["dividend_yield_pct"] >= min_dividend)
+    & (filtered["pe_ratio"] <= max_pe)
+    & (filtered["debt_to_equity"] <= max_de)
+    # &
+    # (filtered["compounded_sales_growth"] >= min_growth)
+    & (filtered["dividend_yield_pct"] >= min_dividend)
 ]
 
 
@@ -151,24 +145,14 @@ st.subheader("Screening Summary")
 
 c1, c2, c3 = st.columns(3)
 
-c1.metric(
-    "Companies Found",
-    len(filtered)
-)
+c1.metric("Companies Found", len(filtered))
 
 c2.metric(
     "Average ROE",
-    f"{filtered['return_on_equity_pct'].mean():.2f}%"
-    if len(filtered)
-    else "0"
+    f"{filtered['return_on_equity_pct'].mean():.2f}%" if len(filtered) else "0",
 )
 
-c3.metric(
-    "Average PE",
-    f"{filtered['pe_ratio'].mean():.2f}"
-    if len(filtered)
-    else "0"
-)
+c3.metric("Average PE", f"{filtered['pe_ratio'].mean():.2f}" if len(filtered) else "0")
 
 st.subheader("Matching Companies")
 
@@ -199,4 +183,3 @@ st.download_button(
     "screener_output.csv",
     "text/csv",
 )
-

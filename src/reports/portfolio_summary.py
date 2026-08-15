@@ -2,21 +2,19 @@ import sqlite3
 from pathlib import Path
 
 import pandas as pd
-
 from reportlab.lib import colors
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.platypus import (
-    SimpleDocTemplate,
+    PageBreak,
     Paragraph,
+    SimpleDocTemplate,
     Spacer,
     Table,
     TableStyle,
-    PageBreak,
 )
-
 
 # ==========================================================
 # PATHS
@@ -75,13 +73,9 @@ ratios = pd.read_sql(
 # CLEAN DATA
 # ==========================================================
 
-companies = companies.drop_duplicates(
-    subset=["company_id"]
-)
+companies = companies.drop_duplicates(subset=["company_id"])
 
-sectors = sectors.drop_duplicates(
-    subset=["company_id"]
-)
+sectors = sectors.drop_duplicates(subset=["company_id"])
 
 
 df = ratios.merge(
@@ -97,14 +91,13 @@ df = df.merge(
 )
 
 
-df = df.sort_values(
-    ["company_id", "year"]
-)
+df = df.sort_values(["company_id", "year"])
 
 
 # ==========================================================
 # HELPERS
 # ==========================================================
+
 
 def clean_value(value):
 
@@ -156,9 +149,7 @@ def trend_arrow(previous, latest):
 
 def latest_two_years(company_data, column):
 
-    data = company_data[
-        ["year", column]
-    ].dropna()
+    data = company_data[["year", column]].dropna()
 
     if len(data) < 2:
         return None, None
@@ -232,9 +223,7 @@ story = []
 # COMPANY PAGES
 # ==========================================================
 
-company_ids = sorted(
-    companies["company_id"].tolist()
-)
+company_ids = sorted(companies["company_id"].tolist())
 
 
 generated = 0
@@ -242,9 +231,7 @@ generated = 0
 
 for company_id in company_ids:
 
-    company_data = df[
-        df["company_id"] == company_id
-    ].sort_values("year")
+    company_data = df[df["company_id"] == company_id].sort_values("year")
 
     if company_data.empty:
         continue
@@ -264,7 +251,6 @@ for company_id in company_ids:
     if pd.isna(sector):
         sector = "Unknown"
 
-
     # ------------------------------------------------------
     # TITLE
     # ------------------------------------------------------
@@ -278,12 +264,10 @@ for company_id in company_ids:
 
     story.append(
         Paragraph(
-            f"<b>Ticker:</b> {company_id} &nbsp;&nbsp; "
-            f"<b>Sector:</b> {sector}",
+            f"<b>Ticker:</b> {company_id} &nbsp;&nbsp; " f"<b>Sector:</b> {sector}",
             subtitle_style,
         )
     )
-
 
     # ------------------------------------------------------
     # TOP 6 KPIs
@@ -322,7 +306,6 @@ for company_id in company_ids:
         ),
     ]
 
-
     kpi_rows = []
 
     for label, column, suffix in kpi_definitions:
@@ -350,7 +333,6 @@ for company_id in company_ids:
             ]
         )
 
-
     kpi_table = Table(
         kpi_rows,
         colWidths=[
@@ -359,7 +341,6 @@ for company_id in company_ids:
             20 * mm,
         ],
     )
-
 
     kpi_table.setStyle(
         TableStyle(
@@ -411,13 +392,9 @@ for company_id in company_ids:
         )
     )
 
-
     story.append(kpi_table)
 
-    story.append(
-        Spacer(1, 12)
-    )
-
+    story.append(Spacer(1, 12))
 
     # ------------------------------------------------------
     # TREND SUMMARY
@@ -430,7 +407,6 @@ for company_id in company_ids:
         )
     )
 
-
     trend_rows = [
         [
             "Metric",
@@ -439,7 +415,6 @@ for company_id in company_ids:
             "Trend",
         ]
     ]
-
 
     for label, column, suffix in kpi_definitions:
 
@@ -457,7 +432,6 @@ for company_id in company_ids:
             ]
         )
 
-
     trend_table = Table(
         trend_rows,
         colWidths=[
@@ -467,7 +441,6 @@ for company_id in company_ids:
             20 * mm,
         ],
     )
-
 
     trend_table.setStyle(
         TableStyle(
@@ -519,13 +492,9 @@ for company_id in company_ids:
         )
     )
 
-
     story.append(trend_table)
 
-    story.append(
-        Spacer(1, 15)
-    )
-
+    story.append(Spacer(1, 15))
 
     # ------------------------------------------------------
     # DATA COVERAGE
@@ -544,31 +513,22 @@ for company_id in company_ids:
             )
         )
 
-
-    story.append(
-        Spacer(1, 10)
-    )
-
+    story.append(Spacer(1, 10))
 
     story.append(
         Paragraph(
-            "Trend arrows: ↑ improved, ↓ declined, "
-            "→ flat within 2%.",
+            "Trend arrows: ↑ improved, ↓ declined, " "→ flat within 2%.",
             body_style,
         )
     )
 
-
     generated += 1
-
 
     # ------------------------------------------------------
     # NEXT COMPANY
     # ------------------------------------------------------
 
-    story.append(
-        PageBreak()
-    )
+    story.append(PageBreak())
 
 
 # ==========================================================

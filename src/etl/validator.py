@@ -1,8 +1,9 @@
-from pathlib import Path
-import pandas as pd
 import csv
+from pathlib import Path
 
-from normaliser import normalize_year, normalize_ticker
+import pandas as pd
+
+from src.etl.normaliser import normalize_ticker, normalize_year
 
 # ==========================================
 # Configuration
@@ -26,6 +27,7 @@ SUPPORTING_FILES = {
 # ==========================================
 # Load Dataset
 # ==========================================
+
 
 def load_dataset(filename):
 
@@ -56,6 +58,7 @@ def load_dataset(filename):
 # DQ-01 Primary Key
 # ==========================================
 
+
 def check_primary_key(df, table_name):
 
     if "id" not in df.columns:
@@ -69,17 +72,20 @@ def check_primary_key(df, table_name):
     else:
         print(f"❌ {table_name}: {len(duplicates)} duplicate IDs")
 
-        validation_failures.append({
-            "table": table_name,
-            "rule": "DQ-01",
-            "severity": "CRITICAL",
-            "message": f"{len(duplicates)} duplicate primary keys"
-        })
+        validation_failures.append(
+            {
+                "table": table_name,
+                "rule": "DQ-01",
+                "severity": "CRITICAL",
+                "message": f"{len(duplicates)} duplicate primary keys",
+            }
+        )
 
 
 # ==========================================
 # DQ-02 Company + Year
 # ==========================================
+
 
 def check_company_year_key(df, table_name):
 
@@ -107,25 +113,25 @@ def check_company_year_key(df, table_name):
     else:
 
         summary = (
-            duplicates
-            .groupby(["company_id", "year"])
-            .size()
-            .reset_index(name="count")
+            duplicates.groupby(["company_id", "year"]).size().reset_index(name="count")
         )
 
         print(f"⚠️ {table_name}: {len(summary)} duplicate company-year records")
 
-        validation_failures.append({
-            "table": table_name,
-            "rule": "DQ-02",
-            "severity": "WARNING",
-            "message": f"{len(summary)} duplicate company-year combinations"
-        })
+        validation_failures.append(
+            {
+                "table": table_name,
+                "rule": "DQ-02",
+                "severity": "WARNING",
+                "message": f"{len(summary)} duplicate company-year combinations",
+            }
+        )
 
 
 # ==========================================
 # DQ-03 Foreign Key
 # ==========================================
+
 
 def check_foreign_key(df, table_name, valid_companies):
 
@@ -144,13 +150,14 @@ def check_foreign_key(df, table_name, valid_companies):
 
         print(f"❌ {table_name}: {len(invalid)} invalid company IDs")
 
-        validation_failures.append({
-            "table": table_name,
-            "rule": "DQ-03",
-            "severity": "CRITICAL",
-            "message": f"{len(invalid)} invalid company IDs"
-        })
-
+        validation_failures.append(
+            {
+                "table": table_name,
+                "rule": "DQ-03",
+                "severity": "CRITICAL",
+                "message": f"{len(invalid)} invalid company IDs",
+            }
+        )
 
 
 def check_balance_sheet(df, table_name):
@@ -163,8 +170,8 @@ def check_balance_sheet(df, table_name):
         return
 
     invalid = df[
-        pd.to_numeric(df["total_assets"], errors="coerce") <
-        pd.to_numeric(df["total_liabilities"], errors="coerce")
+        pd.to_numeric(df["total_assets"], errors="coerce")
+        < pd.to_numeric(df["total_liabilities"], errors="coerce")
     ]
 
     if invalid.empty:
@@ -172,13 +179,14 @@ def check_balance_sheet(df, table_name):
     else:
         print(f"⚠️ DQ-04: {len(invalid)} balance mismatches")
 
-        validation_failures.append({
-            "table": table_name,
-            "rule": "DQ-04",
-            "severity": "WARNING",
-            "message": f"{len(invalid)} balance sheet mismatches"
-        })
-
+        validation_failures.append(
+            {
+                "table": table_name,
+                "rule": "DQ-04",
+                "severity": "WARNING",
+                "message": f"{len(invalid)} balance sheet mismatches",
+            }
+        )
 
 
 def check_positive_sales(df, table_name):
@@ -192,12 +200,14 @@ def check_positive_sales(df, table_name):
     else:
         print(f"⚠️ DQ-05: {invalid.sum()} invalid sales")
 
-        validation_failures.append({
-            "table": table_name,
-            "rule": "DQ-05",
-            "severity": "WARNING",
-            "message": f"{invalid.sum()} non-positive sales"
-        })
+        validation_failures.append(
+            {
+                "table": table_name,
+                "rule": "DQ-05",
+                "severity": "WARNING",
+                "message": f"{invalid.sum()} non-positive sales",
+            }
+        )
 
 
 def check_positive_assets(df, table_name):
@@ -241,7 +251,6 @@ def check_tax(df, table_name):
         print(f"⚠️ DQ-08: {invalid.sum()} invalid tax values")
 
 
-
 def check_dividend(df, table_name):
 
     if "dividend_payout" not in df.columns:
@@ -255,7 +264,6 @@ def check_dividend(df, table_name):
         print("✅ DQ-09 Dividend Passed")
     else:
         print(f"⚠️ DQ-09: {invalid.sum()} invalid dividends")
-
 
 
 def check_eps(df, table_name):
@@ -279,22 +287,19 @@ def check_missing(df, table_name):
         print(f"⚠️ DQ-11: {missing} missing values")
 
 
-
 def check_year(df, table_name):
 
     if "year" not in df.columns:
         return
 
-    invalid = (
-        (pd.to_numeric(df["year"], errors="coerce") < 2000) |
-        (pd.to_numeric(df["year"], errors="coerce") > 2035)
+    invalid = (pd.to_numeric(df["year"], errors="coerce") < 2000) | (
+        pd.to_numeric(df["year"], errors="coerce") > 2035
     )
 
     if invalid.sum() == 0:
         print("✅ DQ-12 Year Range Passed")
     else:
         print(f"⚠️ DQ-12: {invalid.sum()} invalid years")
-
 
 
 def check_volume(df, table_name):
@@ -310,7 +315,6 @@ def check_volume(df, table_name):
         print(f"⚠️ DQ-13: {invalid.sum()} invalid volume")
 
 
-
 def check_duplicates(df, table_name):
 
     dup = df.duplicated().sum()
@@ -319,7 +323,6 @@ def check_duplicates(df, table_name):
         print("✅ DQ-14 Duplicate Rows Passed")
     else:
         print(f"⚠️ DQ-14: {dup} duplicate rows")
-
 
 
 def check_company(df, table_name):
@@ -335,7 +338,6 @@ def check_company(df, table_name):
         print(f"⚠️ DQ-15: {invalid} missing company IDs")
 
 
-
 def check_id(df, table_name):
 
     if "id" not in df.columns:
@@ -349,11 +351,10 @@ def check_id(df, table_name):
         print(f"⚠️ DQ-16: {invalid} missing IDs")
 
 
-
-     
 # ==========================================
 # Main
 # ==========================================
+
 
 def main():
 
@@ -406,15 +407,7 @@ def main():
 
     with open(validation_file, "w", newline="", encoding="utf-8") as f:
 
-        writer = csv.DictWriter(
-            f,
-            fieldnames=[
-                "table",
-                "rule",
-                "severity",
-                "message"
-            ]
-        )
+        writer = csv.DictWriter(f, fieldnames=["table", "rule", "severity", "message"])
 
         writer.writeheader()
         writer.writerows(validation_failures)

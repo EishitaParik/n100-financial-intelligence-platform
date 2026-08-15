@@ -4,6 +4,7 @@ from pathlib import Path
 import pandas as pd
 from openpyxl.styles import PatternFill
 
+
 class PeerComparisonEngine:
 
     def __init__(self):
@@ -69,7 +70,6 @@ class PeerComparisonEngine:
         df = pd.read_sql(query, self.conn)
 
         numeric_columns = [
-
             "return_on_equity_pct",
             "net_profit_margin_pct",
             "operating_profit_margin_pct",
@@ -82,8 +82,7 @@ class PeerComparisonEngine:
             "pb_ratio",
             "dividend_yield_pct",
             "compounded_sales_growth",
-            "compounded_profit_growth"
-
+            "compounded_profit_growth",
         ]
 
         for col in numeric_columns:
@@ -106,7 +105,6 @@ class PeerComparisonEngine:
     def calculate_percentiles(self, df):
 
         metrics = [
-
             "return_on_equity_pct",
             "net_profit_margin_pct",
             "operating_profit_margin_pct",
@@ -116,8 +114,7 @@ class PeerComparisonEngine:
             "compounded_profit_growth",
             "market_cap_crore",
             "pe_ratio",
-            "debt_to_equity"
-
+            "debt_to_equity",
         ]
 
         result = df.copy()
@@ -137,32 +134,13 @@ class PeerComparisonEngine:
 
                 values = result.loc[mask, metric]
 
-                if metric == "debt_to_equity":
+                if metric == "debt_to_equity" or metric == "pe_ratio":
 
-                    percentile = (
-                        values.rank(
-                            pct=True,
-                            ascending=False
-                        ) * 100
-                    )
-
-                elif metric == "pe_ratio":
-
-                    percentile = (
-                        values.rank(
-                            pct=True,
-                            ascending=False
-                        ) * 100
-                    )
+                    percentile = values.rank(pct=True, ascending=False) * 100
 
                 else:
 
-                    percentile = (
-                        values.rank(
-                            pct=True,
-                            ascending=True
-                        ) * 100
-                    )
+                    percentile = values.rank(pct=True, ascending=True) * 100
 
                 result.loc[mask, percentile_column] = percentile.round(2)
 
@@ -173,7 +151,9 @@ class PeerComparisonEngine:
         output_file = self.output_path / "peer_comparison.xlsx"
 
         green = PatternFill(fill_type="solid", start_color="C6EFCE", end_color="C6EFCE")
-        yellow = PatternFill(fill_type="solid", start_color="FFEB9C", end_color="FFEB9C")
+        yellow = PatternFill(
+            fill_type="solid", start_color="FFEB9C", end_color="FFEB9C"
+        )
         red = PatternFill(fill_type="solid", start_color="FFC7CE", end_color="FFC7CE")
         gold = PatternFill(fill_type="solid", start_color="FFD966", end_color="FFD966")
 
@@ -206,22 +186,14 @@ class PeerComparisonEngine:
                         median_row[col] = ""
 
                 group_df = pd.concat(
-                    [group_df, pd.DataFrame([median_row])],
-                    ignore_index=True
+                    [group_df, pd.DataFrame([median_row])], ignore_index=True
                 )
 
-                group_df.to_excel(
-                    writer,
-                    sheet_name=sheet,
-                    index=False
-                )
+                group_df.to_excel(writer, sheet_name=sheet, index=False)
 
                 worksheet = writer.sheets[sheet]
 
-                headers = {
-                    cell.value: cell.column
-                    for cell in worksheet[1]
-                }
+                headers = {cell.value: cell.column for cell in worksheet[1]}
 
                 # Percentile colouring
                 for header, col in headers.items():
@@ -234,21 +206,21 @@ class PeerComparisonEngine:
                         cell = worksheet.cell(row=row, column=col)
 
                         if cell.value is None:
-                                continue
+                            continue
 
                         try:
-                                value = float(cell.value)
+                            value = float(cell.value)
                         except (TypeError, ValueError):
-                                continue
+                            continue
 
                         if value >= 75:
-                                cell.fill = green
+                            cell.fill = green
 
                         elif value >= 25:
-                                cell.fill = yellow
+                            cell.fill = yellow
 
                         else:
-                                cell.fill = red   
+                            cell.fill = red
 
                 # Benchmark Highlight
                 if "is_benchmark" in headers:

@@ -9,7 +9,7 @@ import pandas as pd
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 
-ANALYSIS_FILE = BASE_DIR / "data" / "raw" /"analysis.xlsx"
+ANALYSIS_FILE = BASE_DIR / "data" / "raw" / "analysis.xlsx"
 
 OUTPUT_DIR = BASE_DIR / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -34,7 +34,7 @@ TARGET_COLUMNS = [
     "compounded_sales_growth",
     "compounded_profit_growth",
     "stock_price_cagr",
-    "roe"
+    "roe",
 ]
 
 parsed_rows = []
@@ -77,20 +77,20 @@ for _, row in df.iterrows():
 
         if match:
 
-            parsed_rows.append({
-                "company_id": company,
-                "metric_type": column,
-                "period_years": int(match.group(1)),
-                "value_pct": float(match.group(2))
-            })
+            parsed_rows.append(
+                {
+                    "company_id": company,
+                    "metric_type": column,
+                    "period_years": int(match.group(1)),
+                    "value_pct": float(match.group(2)),
+                }
+            )
 
         else:
 
-            failed_rows.append({
-                "company_id": company,
-                "metric_type": column,
-                "original_text": value
-            })
+            failed_rows.append(
+                {"company_id": company, "metric_type": column, "original_text": value}
+            )
 
 # ============================================================
 # Save Parsed CSV
@@ -98,10 +98,7 @@ for _, row in df.iterrows():
 
 parsed_df = pd.DataFrame(parsed_rows)
 
-parsed_df.to_csv(
-    PARSED_OUTPUT,
-    index=False
-)
+parsed_df.to_csv(PARSED_OUTPUT, index=False)
 
 print(f"Parsed rows : {len(parsed_df)}")
 
@@ -111,10 +108,7 @@ print(f"Parsed rows : {len(parsed_df)}")
 
 failed_df = pd.DataFrame(failed_rows)
 
-failed_df.to_csv(
-    FAILURE_OUTPUT,
-    index=False
-)
+failed_df.to_csv(FAILURE_OUTPUT, index=False)
 
 print(f"Failed rows : {len(failed_df)}")
 
@@ -122,7 +116,7 @@ print(f"Failed rows : {len(failed_df)}")
 # Cross Validation
 # ============================================================
 
-'''
+"""
 try:
 
     ratio_df = pd.read_csv(RATIO_FILE)
@@ -185,4 +179,4 @@ except FileNotFoundError:
     print("Ratio Engine output not found. Cross-validation skipped.")
 
 print("Day 29 Parser Completed Successfully!")
-'''
+"""

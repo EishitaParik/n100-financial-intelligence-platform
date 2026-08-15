@@ -1,7 +1,6 @@
-import streamlit as st
-import plotly.express as px
 import pandas as pd
-
+import plotly.express as px
+import streamlit as st
 from utils.db import get_dashboard_data
 
 st.set_page_config(layout="wide")
@@ -15,9 +14,7 @@ st.title("🏠 N100 Financial Intelligence Dashboard")
 st.sidebar.header("Dashboard Filters")
 
 year = st.sidebar.selectbox(
-    "Financial Year",
-    [2019, 2020, 2021, 2022, 2023, 2024],
-    index=5
+    "Financial Year", [2019, 2020, 2021, 2022, 2023, 2024], index=5
 )
 
 df = get_dashboard_data(year)
@@ -52,25 +49,17 @@ for col in numeric_cols:
             .str.replace(",", "", regex=False)
         )
 
-        df[col] = pd.to_numeric(
-            df[col],
-            errors="coerce"
-        )
+        df[col] = pd.to_numeric(df[col], errors="coerce")
 
 # ---------------------------------------
 # Quality Score
 # ---------------------------------------
 
 df["quality_score"] = (
-
     df["return_on_equity_pct"].fillna(0)
-
     + df["compounded_sales_growth"].fillna(0)
-
     + df["compounded_profit_growth"].fillna(0)
-
     - df["debt_to_equity"].fillna(0)
-
 )
 
 # ---------------------------------------
@@ -87,9 +76,7 @@ total_companies = len(df)
 
 median_sales_growth = df["compounded_sales_growth"].median()
 
-debt_free = (
-    df["debt_to_equity"] <= 0
-).sum()
+debt_free = (df["debt_to_equity"] <= 0).sum()
 
 # ---------------------------------------
 # KPI Cards
@@ -97,37 +84,19 @@ debt_free = (
 
 c1, c2, c3 = st.columns(3)
 
-c1.metric(
-    "Average ROE",
-    f"{avg_roe:.2f}%"
-)
+c1.metric("Average ROE", f"{avg_roe:.2f}%")
 
-c2.metric(
-    "Median P/E",
-    f"{median_pe:.2f}"
-)
+c2.metric("Median P/E", f"{median_pe:.2f}")
 
-c3.metric(
-    "Median D/E",
-    f"{median_de:.2f}"
-)
+c3.metric("Median D/E", f"{median_de:.2f}")
 
 c4, c5, c6 = st.columns(3)
 
-c4.metric(
-    "Companies",
-    total_companies
-)
+c4.metric("Companies", total_companies)
 
-c5.metric(
-    "Median Revenue CAGR",
-    f"{median_sales_growth:.2f}%"
-)
+c5.metric("Median Revenue CAGR", f"{median_sales_growth:.2f}%")
 
-c6.metric(
-    "Debt Free Companies",
-    debt_free
-)
+c6.metric("Debt Free Companies", debt_free)
 
 st.divider()
 
@@ -149,13 +118,10 @@ fig_sector = px.pie(
     names="broad_sector",
     values="Companies",
     hole=0.55,
-    title="Companies by Sector"
+    title="Companies by Sector",
 )
 
-st.plotly_chart(
-    fig_sector,
-    use_container_width=True
-)
+st.plotly_chart(fig_sector, use_container_width=True)
 
 st.divider()
 
@@ -165,13 +131,7 @@ st.divider()
 
 st.subheader("Top 5 Companies by Quality Score")
 
-top_quality = (
-    df.sort_values(
-        "quality_score",
-        ascending=False
-    )
-    .head(5)
-)
+top_quality = df.sort_values("quality_score", ascending=False).head(5)
 
 st.dataframe(
     top_quality[
@@ -197,13 +157,7 @@ st.divider()
 
 st.subheader("Top 10 Companies by Market Cap")
 
-top_mc = (
-    df.sort_values(
-        "market_cap_crore",
-        ascending=False
-    )
-    .head(10)
-)
+top_mc = df.sort_values("market_cap_crore", ascending=False).head(10)
 
 fig_market = px.bar(
     top_mc,
@@ -213,10 +167,7 @@ fig_market = px.bar(
     title="Largest Companies",
 )
 
-fig_market.update_layout(
-    xaxis_title="Company",
-    yaxis_title="Market Cap (Cr)"
-)
+fig_market.update_layout(xaxis_title="Company", yaxis_title="Market Cap (Cr)")
 
 st.plotly_chart(
     fig_market,

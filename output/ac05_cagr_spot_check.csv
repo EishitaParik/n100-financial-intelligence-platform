@@ -1,0 +1,6 @@
+company_id,start_year,end_year,start_sales,end_sales,manual_5yr_cagr_pct,excel_formula,status
+HDFCBANK,2019,2024,105161.0,283649.0,21.951,=(End Sales/Start Sales)^(1/5)-1,PASS
+INFY,2019,2024,82675.0,153670.0,13.1991,=(End Sales/Start Sales)^(1/5)-1,PASS
+SBILIFE,2019,2024,44604.0,131988.0,24.2316,=(End Sales/Start Sales)^(1/5)-1,PASS
+TCS,2019,2024,146463.0,240893.0,10.4636,=(End Sales/Start Sales)^(1/5)-1,PASS
+ABB,2019,2024,3679.0,5849.0,9.7161,=(End Sales/Start Sales)^(1/5)-1,PASS

@@ -2,9 +2,7 @@ import sqlite3
 from pathlib import Path
 
 import pandas as pd
-
 from cashflow_kpis import capital_allocation_pattern
-
 
 # ==========================================================
 # PATHS
@@ -49,11 +47,9 @@ print("Cashflow rows :", len(df))
 
 df["capital_allocation"] = df.apply(
     lambda row: capital_allocation_pattern(
-        row["operating_activity"],
-        row["investing_activity"],
-        row["financing_activity"]
+        row["operating_activity"], row["investing_activity"], row["financing_activity"]
     ),
-    axis=1
+    axis=1,
 )
 
 
@@ -86,21 +82,19 @@ for company, group in df.groupby("company_id"):
 
     changed = group[
         group["previous_pattern"].notna()
-        &
-        (
-            group["capital_allocation"]
-            != group["previous_pattern"]
-        )
+        & (group["capital_allocation"] != group["previous_pattern"])
     ]
 
     for _, row in changed.iterrows():
 
-        changes.append({
-            "company_id": company,
-            "year": row["year"],
-            "previous_pattern": row["previous_pattern"],
-            "new_pattern": row["capital_allocation"]
-        })
+        changes.append(
+            {
+                "company_id": company,
+                "year": row["year"],
+                "previous_pattern": row["previous_pattern"],
+                "new_pattern": row["capital_allocation"],
+            }
+        )
 
 
 pattern_changes = pd.DataFrame(changes)
@@ -108,19 +102,11 @@ pattern_changes = pd.DataFrame(changes)
 if pattern_changes.empty:
 
     pattern_changes = pd.DataFrame(
-        columns=[
-            "company_id",
-            "year",
-            "previous_pattern",
-            "new_pattern"
-        ]
+        columns=["company_id", "year", "previous_pattern", "new_pattern"]
     )
 
 
-pattern_changes.to_csv(
-    PATTERN_FILE,
-    index=False
-)
+pattern_changes.to_csv(PATTERN_FILE, index=False)
 
 
 # ==========================================================
@@ -132,25 +118,13 @@ if CASHFLOW_FILE.exists():
     cashflow_df = pd.read_excel(CASHFLOW_FILE)
 
     # Latest capital allocation pattern for each company
-    allocation_latest = latest[
-        ["company_id", "capital_allocation"]
-    ].copy()
+    allocation_latest = latest[["company_id", "capital_allocation"]].copy()
 
-    cashflow_df = cashflow_df.drop(
-        columns=["capital_allocation"],
-        errors="ignore"
-    )
+    cashflow_df = cashflow_df.drop(columns=["capital_allocation"], errors="ignore")
 
-    cashflow_df = cashflow_df.merge(
-        allocation_latest,
-        on="company_id",
-        how="left"
-    )
+    cashflow_df = cashflow_df.merge(allocation_latest, on="company_id", how="left")
 
-    cashflow_df.to_excel(
-        CASHFLOW_FILE,
-        index=False
-    )
+    cashflow_df.to_excel(CASHFLOW_FILE, index=False)
 
     print()
     print("Updated:", CASHFLOW_FILE)
@@ -177,9 +151,7 @@ print("Pattern Changes :", len(pattern_changes))
 
 print()
 print("Distribution:")
-print(
-    latest["capital_allocation"].value_counts()
-)
+print(latest["capital_allocation"].value_counts())
 
 print()
 print("Generated:")

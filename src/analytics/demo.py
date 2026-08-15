@@ -1,15 +1,10 @@
 import sqlite3
+
 import pandas as pd
 
 conn = sqlite3.connect("nifty100.db")
 
-companies = [
-    "TCS",
-    "INFY",
-    "HDFCBANK",
-    "RELIANCE",
-    "ITC"
-]
+companies = ["TCS", "INFY", "HDFCBANK", "RELIANCE", "ITC"]
 
 for company in companies:
 

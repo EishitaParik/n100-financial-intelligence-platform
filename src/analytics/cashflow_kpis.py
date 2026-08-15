@@ -72,7 +72,7 @@ def capital_allocation_pattern(cfo, cfi, cff):
     signs = (
         "+" if cfo >= 0 else "-",
         "+" if cfi >= 0 else "-",
-        "+" if cff >= 0 else "-"
+        "+" if cff >= 0 else "-",
     )
 
     patterns = {

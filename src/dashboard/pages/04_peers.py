@@ -1,6 +1,5 @@
-import streamlit as st
 import plotly.express as px
-
+import streamlit as st
 from utils.db import (
     get_peer_groups,
     get_peers,
@@ -16,10 +15,7 @@ if groups.empty:
     st.error("No peer groups found.")
     st.stop()
 
-peer_group = st.selectbox(
-    "Select Peer Group",
-    groups["peer_group_name"]
-)
+peer_group = st.selectbox("Select Peer Group", groups["peer_group_name"])
 
 df = get_peers(peer_group)
 
@@ -31,34 +27,19 @@ st.subheader("Peer Group Summary")
 
 c1, c2, c3, c4 = st.columns(4)
 
-c1.metric(
-    "Companies",
-    df["company_name"].nunique()
-)
+c1.metric("Companies", df["company_name"].nunique())
 
-c2.metric(
-    "Average ROE",
-    f"{df['return_on_equity_pct'].mean():.2f}%"
-)
+c2.metric("Average ROE", f"{df['return_on_equity_pct'].mean():.2f}%")
 
-c3.metric(
-    "Average PE",
-    f"{df['pe_ratio'].mean():.2f}"
-)
+c3.metric("Average PE", f"{df['pe_ratio'].mean():.2f}")
 
-c4.metric(
-    "Average Market Cap",
-    f"{df['market_cap_crore'].mean():,.0f} Cr"
-)
+c4.metric("Average Market Cap", f"{df['market_cap_crore'].mean():,.0f} Cr")
 
 st.divider()
 
 st.subheader("Peer Comparison Table")
 
-latest = (
-    df.sort_values("year", ascending=False)
-      .drop_duplicates("company_name")
-)
+latest = df.sort_values("year", ascending=False).drop_duplicates("company_name")
 
 columns = [
     "company_name",
@@ -88,30 +69,20 @@ fig = px.bar(
     x="company_name",
     y="return_on_equity_pct",
     color="is_benchmark",
-    title="Return on Equity"
+    title="Return on Equity",
 )
 
-st.plotly_chart(
-    fig,
-    use_container_width=True
-)
+st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
 
 st.subheader("P/E Ratio Comparison")
 
 fig = px.bar(
-    latest,
-    x="company_name",
-    y="pe_ratio",
-    color="company_name",
-    title="P/E Ratio"
+    latest, x="company_name", y="pe_ratio", color="company_name", title="P/E Ratio"
 )
 
-st.plotly_chart(
-    fig,
-    use_container_width=True
-)
+st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
 
@@ -125,13 +96,10 @@ fig = px.scatter(
     size="market_cap_crore",
     color="company_name",
     hover_name="company_name",
-    title="Market Cap vs ROE"
+    title="Market Cap vs ROE",
 )
 
-st.plotly_chart(
-    fig,
-    use_container_width=True
-)
+st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
 
@@ -142,14 +110,7 @@ fig = px.bar(
     x="company_name",
     y="compounded_profit_growth",
     color="company_name",
-    title="Compounded Profit Growth"
+    title="Compounded Profit Growth",
 )
 
-st.plotly_chart(
-    fig,
-    use_container_width=True
-)
-
-
-
-
+st.plotly_chart(fig, use_container_width=True)

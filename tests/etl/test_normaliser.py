@@ -1,15 +1,16 @@
 import sys
 from pathlib import Path
+
 import pytest
 
 sys.path.append(str(Path(__file__).resolve().parents[2] / "src" / "etl"))
 
-from normaliser import normalize_year, normalize_ticker
-
+from normaliser import normalize_ticker, normalize_year
 
 # ===========================
 # normalize_year()
 # ===========================
+
 
 @pytest.mark.parametrize(
     "input_year, expected",
@@ -43,6 +44,7 @@ def test_normalize_year(input_year, expected):
 # ===========================
 # normalize_ticker()
 # ===========================
+
 
 @pytest.mark.parametrize(
     "input_ticker, expected",

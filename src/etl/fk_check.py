@@ -13,6 +13,3 @@ else:
     print(errors)
 
 conn.close()
-
-
-

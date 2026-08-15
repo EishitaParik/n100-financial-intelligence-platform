@@ -1,4 +1,5 @@
 import sqlite3
+
 import pandas as pd
 
 DATABASE = "nifty100.db"

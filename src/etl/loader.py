@@ -1,10 +1,10 @@
-from pathlib import Path
-import pandas as pd
-import sqlite3
 import csv
+import sqlite3
 import traceback
+from pathlib import Path
 
-from normaliser import normalize_year, normalize_ticker
+import pandas as pd
+from normaliser import normalize_ticker, normalize_year
 
 # =====================================================
 # Configuration
@@ -46,6 +46,7 @@ conn = sqlite3.connect(DATABASE)
 # Load Excel File
 # =====================================================
 
+
 def load_excel(file_path):
 
     try:
@@ -82,20 +83,13 @@ def load_excel(file_path):
 
         table_name = TABLE_MAPPING[file_path.name]
 
-
         cursor = conn.cursor()
 
         cursor.execute(f"DELETE FROM {table_name}")
 
         conn.commit()
 
-        
-        df.to_sql(
-            table_name,
-            conn,
-            if_exists="append",
-            index=False
-        )
+        df.to_sql(table_name, conn, if_exists="append", index=False)
 
         print("=" * 70)
         print(f"File      : {file_path.name}")
@@ -109,10 +103,10 @@ def load_excel(file_path):
             "file": file_path.name,
             "rows_loaded": len(df),
             "rows_rejected": 0,
-            "status": "Success"
+            "status": "Success",
         }
 
-    except Exception as e:
+    except (OSError, ValueError, KeyError) as e:
 
         print("=" * 70)
         print(f"❌ Error loading {file_path.name}")
@@ -123,13 +117,14 @@ def load_excel(file_path):
             "file": file_path.name,
             "rows_loaded": 0,
             "rows_rejected": 0,
-            "status": f"Failed: {e}"
+            "status": f"Failed: {e}",
         }
 
 
 # =====================================================
 # Main
 # =====================================================
+
 
 def main():
 
@@ -162,14 +157,7 @@ def main():
     with open(audit_file, "w", newline="", encoding="utf-8") as f:
 
         writer = csv.DictWriter(
-            f,
-            fieldnames=[
-                "table",
-                "file",
-                "rows_loaded",
-                "rows_rejected",
-                "status"
-            ]
+            f, fieldnames=["table", "file", "rows_loaded", "rows_rejected", "status"]
         )
 
         writer.writeheader()

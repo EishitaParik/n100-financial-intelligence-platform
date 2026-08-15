@@ -14,7 +14,7 @@ def safe_value(value, default="N/A", decimals=2):
 
     try:
         return round(float(value), decimals)
-    except Exception:
+    except (TypeError, ValueError):
         return value
 
 
@@ -29,4 +29,3 @@ def safe_metric(value, suffix="", decimals=2):
         return value
 
     return f"{value}{suffix}"
-

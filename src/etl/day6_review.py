@@ -32,11 +32,14 @@ print("=" * 60)
 
 for company_id, company_name in companies:
 
-    cursor.execute("""
+    cursor.execute(
+        """
         SELECT COUNT(DISTINCT year)
         FROM profitandloss
         WHERE company_id = ?
-    """, (company_id,))
+    """,
+        (company_id,),
+    )
 
     years = cursor.fetchone()[0]
 

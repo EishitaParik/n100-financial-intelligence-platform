@@ -1,15 +1,13 @@
-import streamlit as st
 import plotly.express as px
-import pandas as pd
-
+import streamlit as st
 from utils.db import (
-    get_companies,
-    get_company_profile,
-    get_ratios,
-    get_pl,
     get_bs,
     get_cf,
+    get_companies,
+    get_company_profile,
+    get_pl,
     get_pros_cons,
+    get_ratios,
 )
 
 st.set_page_config(layout="wide")
@@ -22,15 +20,9 @@ if companies.empty:
     st.error("No companies available.")
     st.stop()
 
-company = st.selectbox(
-    "Select Company",
-    companies["company_name"]
-)
+company = st.selectbox("Select Company", companies["company_name"])
 
-ticker = companies.loc[
-    companies["company_name"] == company,
-    "id"
-].iloc[0]
+ticker = companies.loc[companies["company_name"] == company, "id"].iloc[0]
 
 profile = get_company_profile(ticker)
 
@@ -50,26 +42,17 @@ with col1:
 
     st.write(profile.get("about_company", "No description available."))
 
-    st.markdown(
-        f"**Website:** {profile.get('website', '-')}"
-    )
+    st.markdown(f"**Website:** {profile.get('website', '-')}")
 
-    st.markdown(
-        f"**Sector:** {profile.get('broad_sector', '-')}"
-    )
+    st.markdown(f"**Sector:** {profile.get('broad_sector', '-')}")
 
-    st.markdown(
-        f"**Sub Sector:** {profile.get('sub_sector', '-')}"
-    )
+    st.markdown(f"**Sub Sector:** {profile.get('sub_sector', '-')}")
 
 with col2:
 
     if profile.get("company_logo"):
 
-        st.image(
-            profile["company_logo"],
-            width=140
-        )
+        st.image(profile["company_logo"], width=140)
 
         # ---------------------------------------
 # KPI Cards
@@ -77,32 +60,17 @@ with col2:
 
 c1, c2, c3 = st.columns(3)
 
-c1.metric(
-    "ROE",
-    f"{profile.get('roe_percentage',0):.2f}%"
-)
+c1.metric("ROE", f"{profile.get('roe_percentage',0):.2f}%")
 
-c2.metric(
-    "ROCE",
-    f"{profile.get('roce_percentage',0):.2f}%"
-)
+c2.metric("ROCE", f"{profile.get('roce_percentage',0):.2f}%")
 
-c3.metric(
-    "Face Value",
-    profile.get("face_value","-")
-)
+c3.metric("Face Value", profile.get("face_value", "-"))
 
 c4, c5 = st.columns(2)
 
-c4.metric(
-    "Book Value",
-    profile.get("book_value","-")
-)
+c4.metric("Book Value", profile.get("book_value", "-"))
 
-c5.metric(
-    "Ticker",
-    ticker
-)
+c5.metric("Ticker", ticker)
 
 st.divider()
 
@@ -130,17 +98,11 @@ if not ratios.empty:
         "operating_profit_margin_pct",
     ]
 
-    available = [
-        col for col in ratio_cols
-        if col in ratios.columns
-    ]
+    available = [col for col in ratio_cols if col in ratios.columns]
 
     if available:
 
-        metric = st.selectbox(
-            "Select Ratio",
-            available
-        )
+        metric = st.selectbox("Select Ratio", available)
 
         fig = px.line(
             ratios,
@@ -175,18 +137,11 @@ if not pl.empty:
         hide_index=True,
     )
 
-    numeric_cols = [
-        col for col in pl.columns
-        if col != "company_id" and col != "year"
-    ]
+    numeric_cols = [col for col in pl.columns if col != "company_id" and col != "year"]
 
     if numeric_cols:
 
-        metric = st.selectbox(
-            "P&L Metric",
-            numeric_cols,
-            key="pl_metric"
-        )
+        metric = st.selectbox("P&L Metric", numeric_cols, key="pl_metric")
 
         fig = px.line(
             pl,
@@ -278,5 +233,3 @@ if not pros_cons.empty:
 else:
 
     st.info("No Pros & Cons available.")
-
-    

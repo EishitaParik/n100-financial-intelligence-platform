@@ -1,22 +1,21 @@
 import sqlite3
 from pathlib import Path
 
-import pandas as pd
 import matplotlib.pyplot as plt
-
+import pandas as pd
 from reportlab.lib import colors
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.platypus import (
-    SimpleDocTemplate,
+    Image,
+    PageBreak,
     Paragraph,
+    SimpleDocTemplate,
     Spacer,
     Table,
     TableStyle,
-    Image,
-    PageBreak,
 )
 
 # ==========================================================
@@ -92,6 +91,7 @@ small_style = ParagraphStyle(
 # DATA HELPERS
 # ==========================================================
 
+
 def get_company_data(company_id):
 
     ratio_query = """
@@ -157,49 +157,36 @@ def get_pros_cons(company_id):
 
     data = pd.read_csv(file)
 
-    company_data = data[
-        data["company_id"] == company_id
-    ]
+    company_data = data[data["company_id"] == company_id]
 
-    pros = company_data[
-        company_data["type"].str.lower() == "pro"
-    ]
+    pros = company_data[company_data["type"].str.lower() == "pro"]
 
-    cons = company_data[
-        company_data["type"].str.lower() == "con"
-    ]
+    cons = company_data[company_data["type"].str.lower() == "con"]
 
     return pros, cons
 
 
 def get_capital_allocation(company_id):
 
-    file = (
-        BASE_DIR
-        / "output"
-        / "cashflow_intelligence.xlsx"
-    )
+    file = BASE_DIR / "output" / "cashflow_intelligence.xlsx"
 
     if not file.exists():
         return None
 
     data = pd.read_excel(file)
 
-    company_data = data[
-        data["company_id"] == company_id
-    ]
+    company_data = data[data["company_id"] == company_id]
 
     if company_data.empty:
         return None
 
-    return company_data.iloc[-1].get(
-        "capital_allocation"
-    )
+    return company_data.iloc[-1].get("capital_allocation")
 
 
 # ==========================================================
 # CHARTS
 # ==========================================================
+
 
 def create_growth_chart(company_id, ratios):
 
@@ -211,15 +198,10 @@ def create_growth_chart(company_id, ratios):
         "earnings_per_share",
     ]
 
-    if not all(
-        column in ratios.columns
-        for column in required
-    ):
+    if not all(column in ratios.columns for column in required):
         return None
 
-    data = ratios.dropna(
-        subset=["year", "earnings_per_share"]
-    ).copy()
+    data = ratios.dropna(subset=["year", "earnings_per_share"]).copy()
 
     if data.empty:
         return None
@@ -260,15 +242,10 @@ def create_cashflow_chart(company_id, cashflow):
         "financing_activity",
     ]
 
-    if not all(
-        column in cashflow.columns
-        for column in required
-    ):
+    if not all(column in cashflow.columns for column in required):
         return None
 
-    data = cashflow.dropna(
-        subset=required
-    ).tail(8)
+    data = cashflow.dropna(subset=required).tail(8)
 
     if data.empty:
         return None
@@ -300,9 +277,7 @@ def create_cashflow_chart(company_id, cashflow):
 
     plt.title("Cash Flow Trend")
 
-    plt.legend(
-        fontsize=7
-    )
+    plt.legend(fontsize=7)
 
     plt.tight_layout()
 
@@ -317,42 +292,29 @@ def create_cashflow_chart(company_id, cashflow):
 # TEARSHEET
 # ==========================================================
 
+
 def build_tearsheet(company_id):
 
-    company_match = companies[
-        companies["company_id"] == company_id
-    ]
+    company_match = companies[companies["company_id"] == company_id]
 
     if company_match.empty:
-        print(
-            f"Skipping {company_id}: company not found"
-        )
+        print(f"Skipping {company_id}: company not found")
         return False
 
     company = company_match.iloc[0]
 
-    ratios, analysis, market, cashflow = (
-        get_company_data(company_id)
-    )
-
+    ratios, analysis, _market, cashflow = get_company_data(company_id)
     if ratios.empty:
-        print(
-            f"Skipping {company_id}: no ratio data"
-        )
+        print(f"Skipping {company_id}: no ratio data")
         return False
 
     pros, cons = get_pros_cons(company_id)
 
-    allocation = get_capital_allocation(
-        company_id
-    )
+    allocation = get_capital_allocation(company_id)
 
     company_name = company["company_name"]
 
-    output_file = (
-        OUTPUT_DIR
-        / f"{company_id}_tearsheet.pdf"
-    )
+    output_file = OUTPUT_DIR / f"{company_id}_tearsheet.pdf"
 
     doc = SimpleDocTemplate(
         str(output_file),
@@ -400,33 +362,22 @@ def build_tearsheet(company_id):
         except (TypeError, ValueError):
             return "N/A"
 
-
     kpis = [
         [
             "ROE",
-            safe_number(
-                latest.get("return_on_equity_pct"),
-                "%"
-            ),
+            safe_number(latest.get("return_on_equity_pct"), "%"),
         ],
         [
             "D/E",
-            safe_number(
-                latest.get("debt_to_equity")
-            ),
+            safe_number(latest.get("debt_to_equity")),
         ],
         [
             "OPM",
-            safe_number(
-                latest.get("operating_profit_margin_pct"),
-                "%"
-            ),
+            safe_number(latest.get("operating_profit_margin_pct"), "%"),
         ],
         [
             "FCF",
-            safe_number(
-                latest.get("free_cash_flow_cr")
-            ),
+            safe_number(latest.get("free_cash_flow_cr")),
         ],
     ]
 
@@ -435,7 +386,8 @@ def build_tearsheet(company_id):
         colWidths=[
             42 * mm,
             42 * mm,
-        ] * 2,
+        ]
+        * 2,
     )
 
     table.setStyle(
@@ -493,11 +445,7 @@ def build_tearsheet(company_id):
         )
     )
 
-    allocation_text = (
-        allocation
-        if allocation is not None
-        else "Not Available"
-    )
+    allocation_text = allocation if allocation is not None else "Not Available"
 
     story.append(
         Paragraph(
@@ -661,8 +609,7 @@ def build_tearsheet(company_id):
 
             story.append(
                 Paragraph(
-                    f"• {item['text']} "
-                    f"({item['confidence_pct']}%)",
+                    f"• {item['text']} " f"({item['confidence_pct']}%)",
                     body_style,
                 )
             )
@@ -693,8 +640,7 @@ def build_tearsheet(company_id):
 
             story.append(
                 Paragraph(
-                    f"• {item['text']} "
-                    f"({item['confidence_pct']}%)",
+                    f"• {item['text']} " f"({item['confidence_pct']}%)",
                     body_style,
                 )
             )
@@ -705,10 +651,6 @@ def build_tearsheet(company_id):
 
     doc.build(story)
 
-    print(
-        f"Created: {output_file}"
-    )
+    print(f"Created: {output_file}")
 
     return True
-
-

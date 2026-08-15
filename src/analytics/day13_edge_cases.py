@@ -25,8 +25,10 @@ with open(log_file, "w", encoding="utf-8") as f:
         WHERE broad_sector='Financials'
     """).fetchall()
 
-    for company in financials:
-        f.write(f"{company[0]} : High leverage expected - D/E warning suppressed\n")
+    f.writelines(
+        f"{company[0]} : High leverage expected - D/E warning suppressed\n"
+        for company in financials
+    )
 
     f.write("\n")
 
@@ -54,10 +56,7 @@ with open(log_file, "w", encoding="utf-8") as f:
 
         if roe < 1:
 
-            f.write(
-                f"{company}: Source ROE = {roe} "
-                "(Possible source anomaly)\n"
-            )
+            f.write(f"{company}: Source ROE = {roe} " "(Possible source anomaly)\n")
 
     f.write("\nReview Category:\n")
     f.write("- Data Source Issue\n")

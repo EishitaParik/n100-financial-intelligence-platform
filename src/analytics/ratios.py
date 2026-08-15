@@ -42,12 +42,7 @@ def return_on_equity(net_profit, equity_capital, reserves):
     return (net_profit / equity) * 100
 
 
-def return_on_capital_employed(
-    ebit,
-    equity_capital,
-    reserves,
-    borrowings
-):
+def return_on_capital_employed(ebit, equity_capital, reserves, borrowings):
     """
     Return on Capital Employed (%)
     """
@@ -71,10 +66,10 @@ def return_on_assets(net_profit, total_assets):
     return (net_profit / total_assets) * 100
 
 
-
 # =====================================================
 # Leverage & Efficiency Ratios
 # =====================================================
+
 
 def debt_to_equity(borrowings, equity_capital, reserves):
     """
@@ -111,11 +106,7 @@ def high_leverage_flag(debt_equity, broad_sector):
     return debt_equity is not None and debt_equity > 5
 
 
-def interest_coverage_ratio(
-    operating_profit,
-    other_income,
-    interest
-):
+def interest_coverage_ratio(operating_profit, other_income, interest):
     """
     Interest Coverage Ratio
 

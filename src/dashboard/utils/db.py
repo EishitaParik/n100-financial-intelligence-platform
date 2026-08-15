@@ -1,7 +1,8 @@
 import sqlite3
+from pathlib import Path
+
 import pandas as pd
 import streamlit as st
-from pathlib import Path
 
 # -------------------------------------------------
 # Database Configuration
@@ -45,6 +46,7 @@ def run_query(query, params=None):
 # Companies
 # -------------------------------------------------
 
+
 @st.cache_data(ttl=600)
 def get_companies():
 
@@ -62,6 +64,7 @@ def get_companies():
 # -------------------------------------------------
 # Dashboard
 # -------------------------------------------------
+
 
 @st.cache_data(ttl=600)
 def get_dashboard_data(year):
@@ -113,9 +116,11 @@ def get_dashboard_data(year):
 
     return run_query(query, (year,))
 
+
 # -------------------------------------------------
 # Company Profile
 # -------------------------------------------------
+
 
 @st.cache_data(ttl=600)
 def get_company_profile(ticker):
@@ -157,6 +162,7 @@ def get_company_profile(ticker):
 # Financial Ratios
 # -------------------------------------------------
 
+
 @st.cache_data(ttl=600)
 def get_ratios(ticker, year=None):
 
@@ -187,6 +193,7 @@ def get_ratios(ticker, year=None):
 # Profit & Loss
 # -------------------------------------------------
 
+
 @st.cache_data(ttl=600)
 def get_pl(ticker):
 
@@ -206,6 +213,7 @@ def get_pl(ticker):
 # -------------------------------------------------
 # Balance Sheet
 # -------------------------------------------------
+
 
 @st.cache_data(ttl=600)
 def get_bs(ticker):
@@ -227,6 +235,7 @@ def get_bs(ticker):
 # Cash Flow
 # -------------------------------------------------
 
+
 @st.cache_data(ttl=600)
 def get_cf(ticker):
 
@@ -242,9 +251,11 @@ def get_cf(ticker):
 
     return run_query(query, (ticker,))
 
+
 # -------------------------------------------------
 # Sectors
 # -------------------------------------------------
+
 
 @st.cache_data(ttl=600)
 def get_sectors():
@@ -270,6 +281,7 @@ def get_sectors():
 # -------------------------------------------------
 # Peer Groups
 # -------------------------------------------------
+
 
 @st.cache_data(ttl=600)
 def get_peer_groups():
@@ -337,9 +349,11 @@ def get_peers(group_name):
 
     return run_query(query, (group_name,))
 
+
 # -------------------------------------------------
 # Valuation
 # -------------------------------------------------
+
 
 @st.cache_data(ttl=600)
 def get_valuation(ticker):
@@ -362,9 +376,11 @@ def get_valuation(ticker):
 
     return run_query(query, (ticker,))
 
+
 # -------------------------------------------------
 # Pros & Cons
 # -------------------------------------------------
+
 
 @st.cache_data(ttl=600)
 def get_pros_cons(ticker):
@@ -379,9 +395,11 @@ def get_pros_cons(ticker):
 
     return run_query(query, (ticker,))
 
+
 # -------------------------------------------------
 # Annual Reports
 # -------------------------------------------------
+
 
 @st.cache_data(ttl=600)
 def get_reports(ticker):
@@ -397,9 +415,11 @@ def get_reports(ticker):
 
     return run_query(query, (ticker,))
 
+
 # -------------------------------------------------
 # Company Search
 # -------------------------------------------------
+
 
 @st.cache_data(ttl=600)
 def search_company(keyword):
@@ -418,5 +438,3 @@ def search_company(keyword):
     value = f"%{keyword}%"
 
     return run_query(query, (value, value))
-
-

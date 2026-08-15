@@ -3,7 +3,6 @@ from pathlib import Path
 
 import pandas as pd
 
-
 # -------------------------------------------------
 # Paths
 # -------------------------------------------------
@@ -21,6 +20,7 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 # Database Connection
 # -------------------------------------------------
 
+
 def get_connection():
     return sqlite3.connect(DATABASE)
 
@@ -28,6 +28,7 @@ def get_connection():
 # -------------------------------------------------
 # Load Valuation Dataset
 # -------------------------------------------------
+
 
 def load_data():
 
@@ -74,14 +75,15 @@ def load_data():
 
     return df
 
+
 # -------------------------------------------------
 # Cleaning
 # -------------------------------------------------
 
+
 def clean_data(df):
 
     numeric_cols = [
-
         "market_cap_crore",
         "enterprise_value_crore",
         "pe_ratio",
@@ -89,31 +91,25 @@ def clean_data(df):
         "ev_ebitda",
         "dividend_yield_pct",
         "net_cash_flow",
-
     ]
 
     for col in numeric_cols:
 
         if col in df.columns:
 
-            df[col] = pd.to_numeric(
-                df[col],
-                errors="coerce"
-            )
+            df[col] = pd.to_numeric(df[col], errors="coerce")
 
     return df
+
 
 # -------------------------------------------------
 # FCF Yield
 # -------------------------------------------------
 
+
 def calculate_fcf_yield(df):
 
-    df["fcf_yield_pct"] = (
-        df["net_cash_flow"]
-        /
-        df["market_cap_crore"]
-    ) * 100
+    df["fcf_yield_pct"] = (df["net_cash_flow"] / df["market_cap_crore"]) * 100
 
     return df
 
@@ -122,21 +118,20 @@ def calculate_fcf_yield(df):
 # Latest Financial Year
 # -------------------------------------------------
 
+
 def latest_year_data(df):
 
     latest_year = df["year"].max()
 
-    latest = (
-        df[df["year"] == latest_year]
-        .copy()
-        .reset_index(drop=True)
-    )
+    latest = df[df["year"] == latest_year].copy().reset_index(drop=True)
 
     return latest
+
 
 # -------------------------------------------------
 # Sector Median PE
 # -------------------------------------------------
+
 
 def calculate_sector_pe(df):
 
@@ -144,41 +139,32 @@ def calculate_sector_pe(df):
         df.groupby("broad_sector")["pe_ratio"]
         .median()
         .reset_index()
-        .rename(
-            columns={
-                "pe_ratio": "sector_median_pe"
-            }
-        )
+        .rename(columns={"pe_ratio": "sector_median_pe"})
     )
 
-    df = df.merge(
-        sector_pe,
-        on="broad_sector",
-        how="left"
-    )
+    df = df.merge(sector_pe, on="broad_sector", how="left")
 
     return df
+
 
 # -------------------------------------------------
 # PE vs Sector Median
 # -------------------------------------------------
 
+
 def calculate_relative_pe(df):
 
     df["pe_vs_sector_median_pct"] = (
-        (
-            df["pe_ratio"] -
-            df["sector_median_pe"]
-        )
-        /
-        df["sector_median_pe"]
+        (df["pe_ratio"] - df["sector_median_pe"]) / df["sector_median_pe"]
     ) * 100
 
     return df
 
+
 # -------------------------------------------------
 # Valuation Flags
 # -------------------------------------------------
+
 
 def assign_flags(df):
 
@@ -199,21 +185,19 @@ def assign_flags(df):
         else:
             return "Fair"
 
-    df["flag"] = df.apply(
-        classify,
-        axis=1
-    )
+    df["flag"] = df.apply(classify, axis=1)
 
     return df
+
 
 # -------------------------------------------------
 # Export Files
 # -------------------------------------------------
 
+
 def export_outputs(df):
 
     summary_cols = [
-
         "company_id",
         "company_name",
         "broad_sector",
@@ -228,32 +212,23 @@ def export_outputs(df):
         "sector_median_pe",
         "pe_vs_sector_median_pct",
         "flag",
-
     ]
 
     summary = df[summary_cols].copy()
 
-    summary.to_excel(
-        OUTPUT_DIR / "valuation_summary.xlsx",
-        index=False
-    )
+    summary.to_excel(OUTPUT_DIR / "valuation_summary.xlsx", index=False)
 
-    flags = summary[
-        summary["flag"].isin(
-            ["Caution", "Discount"]
-        )
-    ]
+    flags = summary[summary["flag"].isin(["Caution", "Discount"])]
 
-    flags.to_csv(
-        OUTPUT_DIR / "valuation_flags.csv",
-        index=False
-    )
+    flags.to_csv(OUTPUT_DIR / "valuation_flags.csv", index=False)
 
     return summary, flags
+
 
 # -------------------------------------------------
 # Main
 # -------------------------------------------------
+
 
 def main():
 
@@ -297,5 +272,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    

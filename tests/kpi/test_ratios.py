@@ -1,9 +1,9 @@
 from src.analytics.ratios import (
     net_profit_margin,
     operating_profit_margin,
-    return_on_equity,
-    return_on_capital_employed,
     return_on_assets,
+    return_on_capital_employed,
+    return_on_equity,
 )
 
 
@@ -42,19 +42,20 @@ def test_return_on_assets():
 def test_return_on_assets_zero_assets():
     assert return_on_assets(300, 0) is None
 
-
     # =====================================================
+
+
 # Debt to Equity
 # =====================================================
 
 from src.analytics.ratios import (
+    asset_turnover,
     debt_to_equity,
     high_leverage_flag,
-    interest_coverage_ratio,
     interest_coverage_label,
+    interest_coverage_ratio,
     interest_warning,
     net_debt,
-    asset_turnover,
 )
 
 

@@ -2,15 +2,9 @@ import sqlite3
 from pathlib import Path
 
 import pandas as pd
-
 from cashflow_kpis import (
-    free_cash_flow,
-    cfo_quality_score,
-    capex_intensity,
-    fcf_conversion,
     capital_allocation_pattern,
 )
-
 
 # ==========================================================
 # PATHS
@@ -72,15 +66,13 @@ for data in [
     sectors,
 ]:
 
-    data.columns = [
-        str(c).strip().lower()
-        for c in data.columns
-    ]
+    data.columns = [str(c).strip().lower() for c in data.columns]
 
 
 # ==========================================================
 # HELPER
 # ==========================================================
+
 
 def find_column(df, candidates):
 
@@ -155,13 +147,9 @@ borrowings_col = find_column(
 
 df = cashflow.copy()
 # Keep only the official 92-company N100 universe
-valid_companies = set(
-    ratios["company_id"].dropna().unique()
-)
+valid_companies = set(ratios["company_id"].dropna().unique())
 
-df = df[
-    df["company_id"].isin(valid_companies)
-].copy()
+df = df[df["company_id"].isin(valid_companies)].copy()
 
 if ratios.shape[1] > 0:
 
@@ -173,10 +161,7 @@ if ratios.shape[1] > 0:
         "total_debt_cr",
     ]
 
-    ratio_columns = [
-        c for c in ratio_columns
-        if c in ratios.columns
-    ]
+    ratio_columns = [c for c in ratio_columns if c in ratios.columns]
 
     df = df.merge(
         ratios[ratio_columns],
@@ -197,9 +182,7 @@ if net_profit_col:
         pnl_columns.append(sales_col)
 
     if operating_profit_col:
-        pnl_columns.append(
-            operating_profit_col
-        )
+        pnl_columns.append(operating_profit_col)
 
     df = df.merge(
         pnl[pnl_columns],
@@ -242,9 +225,7 @@ if sector_col:
     )
 
     df.rename(
-        columns={
-            sector_col: "sector"
-        },
+        columns={sector_col: "sector"},
         inplace=True,
     )
 
@@ -260,9 +241,7 @@ print("Cashflow rows :", len(df))
 # SORT
 # ==========================================================
 
-df = df.sort_values(
-    ["company_id", "year"]
-)
+df = df.sort_values(["company_id", "year"])
 
 
 # ==========================================================
@@ -273,25 +252,17 @@ records = []
 distress_records = []
 
 
-for company_id, company_df in df.groupby(
-    "company_id"
-):
+for company_id, company_df in df.groupby("company_id"):
 
-    company_df = company_df.sort_values(
-        "year"
-    ).copy()
-
+    company_df = company_df.sort_values("year").copy()
 
     # ------------------------------------------------------
     # FCF
     # ------------------------------------------------------
 
-    company_df["calculated_fcf"] = (
-        company_df["operating_activity"].apply(number)
-        +
-        company_df["investing_activity"].apply(number)
-    )
-
+    company_df["calculated_fcf"] = company_df["operating_activity"].apply(
+        number
+    ) + company_df["investing_activity"].apply(number)
 
     # ------------------------------------------------------
     # CFO QUALITY — 5 YEAR AVERAGE
@@ -319,16 +290,11 @@ for company_id, company_df in df.groupby(
 
         if pat != 0:
 
-            quality_ratios.append(
-                cfo / pat
-            )
-
+            quality_ratios.append(cfo / pat)
 
     if quality_ratios:
 
-        avg_quality = sum(
-            quality_ratios
-        ) / len(quality_ratios)
+        avg_quality = sum(quality_ratios) / len(quality_ratios)
 
         if avg_quality > 1:
 
@@ -346,7 +312,6 @@ for company_id, company_df in df.groupby(
 
         avg_quality = None
         quality_label = "N/A"
-
 
     # ------------------------------------------------------
     # LATEST YEAR
@@ -375,7 +340,6 @@ for company_id, company_df in df.groupby(
         )
     )
 
-
     # ------------------------------------------------------
     # CAPEX INTENSITY
     # ABS(CFI) / SALES
@@ -390,11 +354,7 @@ for company_id, company_df in df.groupby(
 
     if latest_sales != 0:
 
-        capex_pct = (
-            abs(latest_cfi)
-            / latest_sales
-            * 100
-        )
+        capex_pct = abs(latest_cfi) / latest_sales * 100
 
         if capex_pct < 3:
 
@@ -413,41 +373,23 @@ for company_id, company_df in df.groupby(
         capex_pct = None
         capex_label = "N/A"
 
-
     # ------------------------------------------------------
     # FCF CAGR — 5 YEAR
     # ------------------------------------------------------
 
-    fcf_series = company_df[
-        ["year", "calculated_fcf"]
-    ].dropna()
+    fcf_series = company_df[["year", "calculated_fcf"]].dropna()
 
     fcf_cagr = None
 
     if len(fcf_series) >= 5:
 
-        first_fcf = number(
-            fcf_series.iloc[-5][
-                "calculated_fcf"
-            ]
-        )
+        first_fcf = number(fcf_series.iloc[-5]["calculated_fcf"])
 
-        last_fcf = number(
-            fcf_series.iloc[-1][
-                "calculated_fcf"
-            ]
-        )
+        last_fcf = number(fcf_series.iloc[-1]["calculated_fcf"])
 
         if first_fcf > 0 and last_fcf > 0:
 
-            fcf_cagr = (
-                (
-                    last_fcf
-                    / first_fcf
-                ) ** (1 / 4)
-                - 1
-            ) * 100
-
+            fcf_cagr = ((last_fcf / first_fcf) ** (1 / 4) - 1) * 100
 
     # ------------------------------------------------------
     # FCF CONVERSION
@@ -461,34 +403,22 @@ for company_id, company_df in df.groupby(
         )
     )
 
-    latest_fcf = number(
-        latest["calculated_fcf"]
-    )
+    latest_fcf = number(latest["calculated_fcf"])
 
     if latest_operating_profit != 0:
 
-        conversion = (
-            latest_fcf
-            / latest_operating_profit
-            * 100
-        )
+        conversion = latest_fcf / latest_operating_profit * 100
 
     else:
 
         conversion = None
-
 
     # ------------------------------------------------------
     # DISTRESS SIGNAL
     # CFO < 0 AND CFF > 0
     # ------------------------------------------------------
 
-    distress_flag = (
-        latest_cfo < 0
-        and
-        latest_cff > 0
-    )
-
+    distress_flag = latest_cfo < 0 and latest_cff > 0
 
     if distress_flag:
 
@@ -506,7 +436,6 @@ for company_id, company_df in df.groupby(
             }
         )
 
-
     # ------------------------------------------------------
     # DELEVERAGING
     # CFF < 0 AND BORROWINGS DECLINING YOY
@@ -514,10 +443,7 @@ for company_id, company_df in df.groupby(
 
     deleveraging = False
 
-    if (
-        borrowings_col
-        and len(company_df) >= 2
-    ):
+    if borrowings_col and len(company_df) >= 2:
 
         previous = company_df.iloc[-2]
 
@@ -535,13 +461,7 @@ for company_id, company_df in df.groupby(
             )
         )
 
-        deleveraging = (
-            latest_cff < 0
-            and
-            latest_borrowings
-            < previous_borrowings
-        )
-
+        deleveraging = latest_cff < 0 and latest_borrowings < previous_borrowings
 
     # ------------------------------------------------------
     # CAPITAL ALLOCATION
@@ -553,7 +473,6 @@ for company_id, company_df in df.groupby(
         latest_cff,
     )
 
-
     # ------------------------------------------------------
     # RECORD
     # ------------------------------------------------------
@@ -561,28 +480,18 @@ for company_id, company_df in df.groupby(
     records.append(
         {
             "company_id": company_id,
-
             "sector": latest.get(
                 "sector",
                 "Unknown",
             ),
-
             "cfo_quality_score": avg_quality,
-
             "cfo_quality_label": quality_label,
-
             "capex_intensity_pct": capex_pct,
-
             "capex_label": capex_label,
-
             "fcf_cagr_5yr": fcf_cagr,
-
             "fcf_conversion_pct": conversion,
-
             "distress_flag": distress_flag,
-
             "deleveraging_flag": deleveraging,
-
             "capital_allocation_label": allocation,
         }
     )
@@ -592,13 +501,9 @@ for company_id, company_df in df.groupby(
 # SAVE OUTPUT
 # ==========================================================
 
-cashflow_df = pd.DataFrame(
-    records
-)
+cashflow_df = pd.DataFrame(records)
 
-cashflow_df = cashflow_df.sort_values(
-    "company_id"
-)
+cashflow_df = cashflow_df.sort_values("company_id")
 
 cashflow_df.to_excel(
     OUTPUT_FILE,
@@ -606,9 +511,7 @@ cashflow_df.to_excel(
 )
 
 
-distress_df = pd.DataFrame(
-    distress_records
-)
+distress_df = pd.DataFrame(distress_records)
 
 distress_df.to_csv(
     DISTRESS_FILE,
@@ -644,9 +547,7 @@ print(
 
 print()
 
-print(
-    cashflow_df.head(20)
-)
+print(cashflow_df.head(20))
 
 print()
 

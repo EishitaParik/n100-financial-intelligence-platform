@@ -1,9 +1,9 @@
 from src.analytics.cashflow_kpis import (
-    free_cash_flow,
-    cfo_quality_score,
     capex_intensity,
-    fcf_conversion,
     capital_allocation_pattern,
+    cfo_quality_score,
+    fcf_conversion,
+    free_cash_flow,
 )
 
 

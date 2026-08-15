@@ -1,7 +1,5 @@
-import streamlit as st
 import plotly.express as px
-import pandas as pd
-
+import streamlit as st
 from utils.db import get_dashboard_data
 
 st.set_page_config(layout="wide")
@@ -24,10 +22,7 @@ if df.empty:
 
 sectors = sorted(df["broad_sector"].dropna().unique())
 
-selected_sector = st.sidebar.selectbox(
-    "Select Sector",
-    ["All"] + sectors
-)
+selected_sector = st.sidebar.selectbox("Select Sector", ["All"] + sectors)
 
 if selected_sector != "All":
     filtered = df[df["broad_sector"] == selected_sector]
@@ -38,25 +33,13 @@ else:
 
 c1, c2, c3, c4 = st.columns(4)
 
-c1.metric(
-    "Companies",
-    len(filtered)
-)
+c1.metric("Companies", len(filtered))
 
-c2.metric(
-    "Average ROE",
-    f"{filtered['return_on_equity_pct'].mean():.2f}%"
-)
+c2.metric("Average ROE", f"{filtered['return_on_equity_pct'].mean():.2f}%")
 
-c3.metric(
-    "Average PE",
-    f"{filtered['pe_ratio'].mean():.2f}"
-)
+c3.metric("Average PE", f"{filtered['pe_ratio'].mean():.2f}")
 
-c4.metric(
-    "Market Cap",
-    f"{filtered['market_cap_crore'].sum():,.0f} Cr"
-)
+c4.metric("Market Cap", f"{filtered['market_cap_crore'].sum():,.0f} Cr")
 
 st.divider()
 
@@ -64,9 +47,9 @@ st.subheader("Companies by Sector")
 
 sector_count = (
     df.groupby("broad_sector")
-      .size()
-      .reset_index(name="Companies")
-      .sort_values("Companies", ascending=False)
+    .size()
+    .reset_index(name="Companies")
+    .sort_values("Companies", ascending=False)
 )
 
 fig = px.bar(
@@ -74,13 +57,10 @@ fig = px.bar(
     x="broad_sector",
     y="Companies",
     text="Companies",
-    title="Sector Distribution"
+    title="Sector Distribution",
 )
 
-st.plotly_chart(
-    fig,
-    use_container_width=True
-)
+st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
 
@@ -88,9 +68,9 @@ st.subheader("Market Capitalization by Sector")
 
 sector_cap = (
     df.groupby("broad_sector")["market_cap_crore"]
-      .sum()
-      .reset_index()
-      .sort_values("market_cap_crore", ascending=False)
+    .sum()
+    .reset_index()
+    .sort_values("market_cap_crore", ascending=False)
 )
 
 fig = px.bar(
@@ -98,13 +78,10 @@ fig = px.bar(
     x="broad_sector",
     y="market_cap_crore",
     text_auto=True,
-    title="Sector-wise Market Cap"
+    title="Sector-wise Market Cap",
 )
 
-st.plotly_chart(
-    fig,
-    use_container_width=True
-)
+st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
 
@@ -112,9 +89,9 @@ st.subheader("Average ROE by Sector")
 
 sector_roe = (
     df.groupby("broad_sector")["return_on_equity_pct"]
-      .mean()
-      .reset_index()
-      .sort_values("return_on_equity_pct", ascending=False)
+    .mean()
+    .reset_index()
+    .sort_values("return_on_equity_pct", ascending=False)
 )
 
 fig = px.bar(
@@ -122,24 +99,16 @@ fig = px.bar(
     x="broad_sector",
     y="return_on_equity_pct",
     color="return_on_equity_pct",
-    title="Average ROE"
+    title="Average ROE",
 )
 
-st.plotly_chart(
-    fig,
-    use_container_width=True
-)
+st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
 
 st.subheader("Top Companies")
 
-top = (
-    filtered.sort_values(
-        "market_cap_crore",
-        ascending=False
-    )
-)
+top = filtered.sort_values("market_cap_crore", ascending=False)
 
 cols = [
     "company_name",
@@ -167,11 +136,7 @@ fig = px.scatter(
     size="market_cap_crore",
     color="broad_sector",
     hover_name="company_name",
-    title="Sector Performance"
+    title="Sector Performance",
 )
 
-st.plotly_chart(
-    fig,
-    use_container_width=True
-)
-
+st.plotly_chart(fig, use_container_width=True)

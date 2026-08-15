@@ -1,10 +1,9 @@
-import streamlit as st
 import plotly.express as px
-
+import streamlit as st
 from utils.db import (
     get_companies,
-    get_ratios,
     get_pl,
+    get_ratios,
     get_valuation,
 )
 
@@ -14,15 +13,9 @@ st.title("📈 Financial Trends")
 
 companies = get_companies()
 
-company = st.selectbox(
-    "Select Company",
-    companies["company_name"]
-)
+company = st.selectbox("Select Company", companies["company_name"])
 
-ticker = companies.loc[
-    companies["company_name"] == company,
-    "id"
-].iloc[0]
+ticker = companies.loc[companies["company_name"] == company, "id"].iloc[0]
 
 ratios = get_ratios(ticker)
 pl = get_pl(ticker)
@@ -46,7 +39,7 @@ trend = st.sidebar.selectbox(
         "PE Ratio",
         "PB Ratio",
         "Market Cap",
-    ]
+    ],
 )
 
 ratio_map = {
@@ -138,11 +131,7 @@ st.divider()
 
 st.subheader("Underlying Data")
 
-tab1, tab2, tab3 = st.tabs([
-    "Financial Ratios",
-    "Profit & Loss",
-    "Valuation"
-])
+tab1, tab2, tab3 = st.tabs(["Financial Ratios", "Profit & Loss", "Valuation"])
 
 with tab1:
     st.dataframe(
@@ -164,4 +153,3 @@ with tab3:
         use_container_width=True,
         hide_index=True,
     )
-

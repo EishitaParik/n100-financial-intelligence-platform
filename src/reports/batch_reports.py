@@ -2,9 +2,7 @@ import sqlite3
 from pathlib import Path
 
 import pandas as pd
-
 from tearsheet import build_tearsheet
-
 
 # ==========================================================
 # PATHS
@@ -20,11 +18,7 @@ SECTOR_DIR = BASE_DIR / "reports" / "sectors"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 SECTOR_DIR.mkdir(parents=True, exist_ok=True)
 
-SKIPPED_FILE = (
-    BASE_DIR
-    / "output"
-    / "skipped_tearsheets.csv"
-)
+SKIPPED_FILE = BASE_DIR / "output" / "skipped_tearsheets.csv"
 
 
 # ==========================================================
@@ -58,9 +52,7 @@ sectors = pd.read_sql(
 # COMPANY LIST
 # ==========================================================
 
-companies = companies.drop_duplicates(
-    subset=["company_id"]
-)
+companies = companies.drop_duplicates(subset=["company_id"])
 
 print("Companies :", len(companies))
 
@@ -85,17 +77,21 @@ for company_id in companies["company_id"]:
 
         else:
 
-            skipped.append({
+            skipped.append(
+                {
+                    "company_id": company_id,
+                    "reason": "No data available",
+                }
+            )
+
+    except (OSError, ValueError, KeyError) as exc:
+
+        skipped.append(
+            {
                 "company_id": company_id,
-                "reason": "No data available",
-            })
-
-    except Exception as exc:
-
-        skipped.append({
-            "company_id": company_id,
-            "reason": str(exc),
-        })
+                "reason": str(exc),
+            }
+        )
 
 
 # ==========================================================
@@ -114,9 +110,7 @@ skipped_df.to_csv(
 # SECTOR REPORTS
 # ==========================================================
 
-sector_map = sectors.drop_duplicates(
-    subset=["company_id"]
-)
+sector_map = sectors.drop_duplicates(subset=["company_id"])
 
 company_sector = companies.merge(
     sector_map,
@@ -124,10 +118,7 @@ company_sector = companies.merge(
     how="left",
 )
 
-sector_counts = (
-    company_sector["broad_sector"]
-    .value_counts(dropna=False)
-)
+sector_counts = company_sector["broad_sector"].value_counts(dropna=False)
 
 print()
 print("Sector Distribution:")
@@ -138,44 +129,28 @@ print(sector_counts)
 # GENERATE SECTOR SUMMARY PDFs
 # ==========================================================
 
+from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.units import mm
 from reportlab.platypus import (
-    SimpleDocTemplate,
     Paragraph,
+    SimpleDocTemplate,
     Spacer,
     Table,
     TableStyle,
 )
-from reportlab.lib import colors
-from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.lib.units import mm
-
 
 styles = getSampleStyleSheet()
 
 
-for sector, group in company_sector.groupby(
-    "broad_sector",
-    dropna=False
-):
+for sector, group in company_sector.groupby("broad_sector", dropna=False):
 
-    sector_name = (
-        "Unknown"
-        if pd.isna(sector)
-        else str(sector)
-    )
+    sector_name = "Unknown" if pd.isna(sector) else str(sector)
 
-    safe_name = (
-        sector_name
-        .replace("/", "_")
-        .replace("\\", "_")
-        .replace(" ", "_")
-    )
+    safe_name = sector_name.replace("/", "_").replace("\\", "_").replace(" ", "_")
 
-    output_file = (
-        SECTOR_DIR
-        / f"{safe_name}_sector_report.pdf"
-    )
+    output_file = SECTOR_DIR / f"{safe_name}_sector_report.pdf"
 
     doc = SimpleDocTemplate(
         str(output_file),
@@ -195,9 +170,7 @@ for sector, group in company_sector.groupby(
         )
     )
 
-    story.append(
-        Spacer(1, 10)
-    )
+    story.append(Spacer(1, 10))
 
     story.append(
         Paragraph(
@@ -206,9 +179,7 @@ for sector, group in company_sector.groupby(
         )
     )
 
-    story.append(
-        Spacer(1, 10)
-    )
+    story.append(Spacer(1, 10))
 
     table_data = [
         [
@@ -276,9 +247,7 @@ for sector, group in company_sector.groupby(
 
     doc.build(story)
 
-    print(
-        f"Sector report created: {output_file}"
-    )
+    print(f"Sector report created: {output_file}")
 
 
 # ==========================================================
@@ -304,8 +273,7 @@ print(
 
 print(
     "Sector reports :",
-    company_sector["broad_sector"]
-    .nunique(),
+    company_sector["broad_sector"].nunique(),
 )
 
 print()
