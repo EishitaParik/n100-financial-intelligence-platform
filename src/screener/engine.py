@@ -1,3 +1,4 @@
+import re
 import sqlite3
 from pathlib import Path
 
@@ -8,32 +9,37 @@ from openpyxl.styles import PatternFill
 
 
 class ScreenerEngine:
-
     def __init__(self):
-
         self.project_root = Path(__file__).resolve().parents[2]
-
         self.db_path = self.project_root / "nifty100.db"
-
         self.output_path = self.project_root / "output"
-
         self.output_path.mkdir(exist_ok=True)
-
         self.conn = sqlite3.connect(self.db_path)
 
     def load_config(self):
-
         config_path = self.project_root / "config" / "screener_config.yaml"
 
-        with open(config_path, "r") as f:
+        with open(config_path, "r", encoding="utf-8") as f:
             return yaml.safe_load(f)
 
+    @staticmethod
+    def extract_cagr(value, years):
+        if pd.isna(value):
+            return np.nan
+
+        text = str(value)
+
+        pattern = rf"{years}\s*Years?\s*:\s*(-?\d+(?:\.\d+)?)\s*%"
+        match = re.search(pattern, text, re.IGNORECASE)
+
+        if match:
+            return float(match.group(1))
+
+        return np.nan
+
     def load_data(self):
-
         query = """
-
         SELECT
-
             fr.company_id,
             fr.year,
 
@@ -79,7 +85,7 @@ class ScreenerEngine:
 
         LEFT JOIN companies c
             ON fr.company_id = c.id
-            
+
         LEFT JOIN profitandloss pl
             ON fr.company_id = pl.company_id
             AND fr.year = pl.year
@@ -94,17 +100,10 @@ class ScreenerEngine:
         LEFT JOIN sectors s
             ON fr.company_id = s.company_id
 
-        ORDER BY
-            fr.company_id,
-            fr.year
-
+        ORDER BY fr.company_id, fr.year
         """
 
         df = pd.read_sql(query, self.conn)
-
-        # -----------------------------
-        # Data Cleaning
-        # -----------------------------
 
         numeric_columns = [
             "return_on_equity_pct",
@@ -120,12 +119,10 @@ class ScreenerEngine:
             "dividend_payout_ratio_pct",
             "total_debt_cr",
             "cash_from_operations_cr",
-            "compounded_sales_growth",
             "sales",
             "net_profit",
             "eps",
             "opm_percentage",
-            "compounded_profit_growth",
             "stock_price_cagr",
             "market_cap_crore",
             "enterprise_value_crore",
@@ -136,32 +133,37 @@ class ScreenerEngine:
         ]
 
         for column in numeric_columns:
+            if column in df.columns:
+                df[column] = pd.to_numeric(
+                    df[column],
+                    errors="coerce",
+                )
 
-            if column not in df.columns:
-                continue
+        # IMPORTANT:
+        # analysis contains text such as:
+        # "10 Years: 21%"
+        # "5 Years: 22%"
+        # "3 Years: 30%"
+        # "TTM: 47%"
+        #
+        # Extract the actual 5-year and 10-year values.
+        df["compounded_sales_growth"] = df["compounded_sales_growth"].apply(
+            lambda x: self.extract_cagr(x, 5)
+        )
 
-            df[column] = (
-                df[column]
-                .astype(str)
-                .str.replace("%", "", regex=False)
-                .str.replace(",", "", regex=False)
-                .str.extract(r"(-?\d+\.?\d*)")[0]
-            )
-
-            df[column] = pd.to_numeric(df[column], errors="coerce")
+        df["compounded_profit_growth"] = df["compounded_profit_growth"].apply(
+            lambda x: self.extract_cagr(x, 5)
+        )
 
         if "interest_coverage" in df.columns:
-
             df["interest_coverage"] = df["interest_coverage"].replace(
-                "Debt Free", np.inf
+                "Debt Free",
+                np.inf,
             )
+
         return df
 
     def apply_filters(self, df, filters):
-        """
-        Apply screening filters from YAML configuration.
-        """
-
         filtered_df = df.copy()
 
         print("\nApplying Filters")
@@ -170,40 +172,37 @@ class ScreenerEngine:
         for key, value in filters.items():
 
             if key.endswith("_min"):
-                column = key.replace("_min", "")
+                column = key[:-4]
                 operator = ">="
 
             elif key.endswith("_max"):
-                column = key.replace("_max", "")
+                column = key[:-4]
                 operator = "<="
 
             else:
                 continue
 
             if column not in filtered_df.columns:
-                print(f"{column} : Column not found")
+                print(f"{column}: Column not found")
                 continue
 
             before = len(filtered_df)
 
-            # Financial companies: ignore Debt/Equity filter
-            if column == "debt_to_equity" and "broad_sector" in filtered_df.columns:
-
+            if column == "debt_to_equity":
                 non_financial = filtered_df["broad_sector"] != "Financials"
 
-                if operator == ">=":
-                    mask = (filtered_df[column] >= value) | (~non_financial)
-                else:
+                if operator == "<=":
                     mask = (filtered_df[column] <= value) | (~non_financial)
+                else:
+                    mask = (filtered_df[column] >= value) | (~non_financial)
 
                 filtered_df = filtered_df[mask]
 
-            else:
+            elif operator == ">=":
+                filtered_df = filtered_df[filtered_df[column] >= value]
 
-                if operator == ">=":
-                    filtered_df = filtered_df[filtered_df[column] >= value]
-                else:
-                    filtered_df = filtered_df[filtered_df[column] <= value]
+            else:
+                filtered_df = filtered_df[filtered_df[column] <= value]
 
             after = len(filtered_df)
 
@@ -212,7 +211,6 @@ class ScreenerEngine:
         return filtered_df
 
     def calculate_composite_quality_score(self, df):
-
         score_df = df.copy()
 
         metrics = [
@@ -225,19 +223,15 @@ class ScreenerEngine:
             "compounded_profit_growth",
         ]
 
-        # Create score columns
         for metric in metrics:
-
             if metric not in score_df.columns:
                 continue
 
-            score_df[metric + "_score"] = 0.0
+            score_df[f"{metric}_score"] = 0.0
 
-            # Sector-wise normalization
             for sector in score_df["broad_sector"].dropna().unique():
 
                 mask = score_df["broad_sector"] == sector
-
                 series = score_df.loc[mask, metric]
 
                 if series.empty:
@@ -246,20 +240,20 @@ class ScreenerEngine:
                 p10 = series.quantile(0.10)
                 p90 = series.quantile(0.90)
 
-                series = series.clip(lower=p10, upper=p90)
+                clipped = series.clip(
+                    lower=p10,
+                    upper=p90,
+                )
 
                 if pd.isna(p10) or pd.isna(p90):
-
-                    score_df.loc[mask, metric + "_score"] = 0
+                    score_df.loc[mask, f"{metric}_score"] = 0
 
                 elif p10 == p90:
-
-                    score_df.loc[mask, metric + "_score"] = 100
+                    score_df.loc[mask, f"{metric}_score"] = 100
 
                 else:
-
-                    score_df.loc[mask, metric + "_score"] = (
-                        (series - p10) / (p90 - p10)
+                    score_df.loc[mask, f"{metric}_score"] = (
+                        (clipped - p10) / (p90 - p10)
                     ) * 100
 
         score_df["composite_quality_score"] = (
@@ -279,7 +273,6 @@ class ScreenerEngine:
         return score_df
 
     def run_screener(self, preset_name):
-
         config = self.load_config()
 
         if preset_name not in config:
@@ -289,130 +282,150 @@ class ScreenerEngine:
 
         df = self.load_data()
 
-        filtered_df = self.apply_filters(df, filters)
+        filtered_df = self.apply_filters(
+            df,
+            filters,
+        )
 
         filtered_df = self.calculate_composite_quality_score(filtered_df)
 
         filtered_df = filtered_df.sort_values(
-            by="composite_quality_score", ascending=False
+            by="composite_quality_score",
+            ascending=False,
         )
 
-        filtered_df = filtered_df.drop_duplicates(subset="company_id", keep="first")
+        filtered_df = filtered_df.drop_duplicates(
+            subset="company_id",
+            keep="first",
+        )
+        if preset_name == "quality_compounder":
+            filtered_df = filtered_df.head(50)
 
-        filtered_df.reset_index(drop=True, inplace=True)
+        filtered_df.reset_index(
+            drop=True,
+            inplace=True,
+        )
 
-        filtered_df.insert(0, "Rank", range(1, len(filtered_df) + 1))
+        filtered_df.insert(
+            0,
+            "Rank",
+            range(1, len(filtered_df) + 1),
+        )
 
         print("Companies:", len(filtered_df))
+
         return filtered_df
 
     def close_connection(self):
         self.conn.close()
 
 
-if __name__ == "__main__":
+def main():
     print("=" * 80)
     print("N100 FINANCIAL SCREENER")
     print("=" * 80)
 
     engine = ScreenerEngine()
 
-try:
+    try:
+        config = engine.load_config()
 
-    config = engine.load_config()
+        print("\nAvailable Presets:")
+        for preset in config:
+            print(f" - {preset}")
 
-    print("\nAvailable Presets:")
-    for preset in config:
-        print(f" • {preset}")
+        output_file = engine.output_path / "screener_output.xlsx"
 
-    output_file = engine.output_path / "screener_output.xlsx"
+        with pd.ExcelWriter(
+            output_file,
+            engine="openpyxl",
+        ) as writer:
 
-    with pd.ExcelWriter(output_file, engine="openpyxl") as writer:
+            for preset_name in config:
 
-        for preset_name in config:
+                print(f"\nRunning Preset: {preset_name}")
 
-            print(f"\nRunning Preset : {preset_name}")
+                result = engine.run_screener(preset_name)
 
-            result = engine.run_screener(preset_name)
+                print(f"Companies Found: {len(result)}")
 
-            print(f"Companies Found : {len(result)}")
+                sheet_name = preset_name[:31]
 
-            result.to_excel(writer, sheet_name=preset_name[:31], index=False)
+                result.to_excel(
+                    writer,
+                    sheet_name=sheet_name,
+                    index=False,
+                )
 
-            worksheet = writer.sheets[preset_name[:31]]
+                worksheet = writer.sheets[sheet_name]
 
-            green_fill = PatternFill(
-                fill_type="solid", start_color="C6EFCE", end_color="C6EFCE"
-            )
+                green_fill = PatternFill(
+                    fill_type="solid",
+                    start_color="C6EFCE",
+                    end_color="C6EFCE",
+                )
 
-            worksheet = writer.sheets[preset_name[:31]]
+                red_fill = PatternFill(
+                    fill_type="solid",
+                    start_color="FFC7CE",
+                    end_color="FFC7CE",
+                )
 
-            green_fill = PatternFill(
-                fill_type="solid", start_color="C6EFCE", end_color="C6EFCE"
-            )
+                filters = config[preset_name]
 
-            red_fill = PatternFill(
-                fill_type="solid", start_color="FFC7CE", end_color="FFC7CE"
-            )
+                headers = {cell.value: cell.column for cell in worksheet[1]}
 
-            filters = config[preset_name]
+                for rule, threshold in filters.items():
 
-            headers = {cell.value: cell.column for cell in worksheet[1]}
+                    if rule.endswith("_min"):
+                        metric = rule[:-4]
+                        comparison = "min"
 
-            for rule, threshold in filters.items():
-
-                if rule.endswith("_min"):
-                    metric = rule.replace("_min", "")
-                    comparison = "min"
-
-                elif rule.endswith("_max"):
-                    metric = rule.replace("_max", "")
-                    comparison = "max"
-
-                else:
-                    continue
-
-                if metric not in headers:
-                    continue
-
-                col = headers[metric]
-
-                for row in range(2, worksheet.max_row + 1):
-
-                    cell = worksheet.cell(row=row, column=col)
-
-                    if cell.value is None:
-                        continue
-
-                    try:
-                        value = float(cell.value)
-                    except (TypeError, ValueError):
-                        continue
-
-                    if comparison == "min":
-
-                        if value >= threshold:
-                            cell.fill = green_fill
-                        else:
-                            cell.fill = red_fill
+                    elif rule.endswith("_max"):
+                        metric = rule[:-4]
+                        comparison = "max"
 
                     else:
+                        continue
 
-                        if value <= threshold:
-                            cell.fill = green_fill
+                    if metric not in headers:
+                        continue
+
+                    col = headers[metric]
+
+                    for row in range(
+                        2,
+                        worksheet.max_row + 1,
+                    ):
+
+                        cell = worksheet.cell(
+                            row=row,
+                            column=col,
+                        )
+
+                        if cell.value is None:
+                            continue
+
+                        try:
+                            value = float(cell.value)
+                        except (
+                            TypeError,
+                            ValueError,
+                        ):
+                            continue
+
+                        if comparison == "min":
+                            cell.fill = green_fill if value >= threshold else red_fill
                         else:
-                            cell.fill = red_fill
+                            cell.fill = green_fill if value <= threshold else red_fill
 
-    print("\nExcel exported successfully.")
-    print(output_file)
+        print("\nExcel exported successfully.")
+        print(output_file)
 
-except (OSError, ValueError, KeyError) as e:
+    finally:
+        engine.close_connection()
+        print("\nDatabase connection closed.")
 
-    print("\nERROR")
-    print(e)
 
-finally:
-
-    engine.close_connection()
-
-    print("\nDatabase connection closed.")
+if __name__ == "__main__":
+    main()
